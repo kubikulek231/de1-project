@@ -1,9 +1,8 @@
 # de1-project
 ### Team members
 
-* Member 1 (responsible for ...)
-* Member 2 (responsible for ...)
-* Member 3 (responsible for ...)
+* Josef Caha 1 (responsible for ...)
+* Jakub Lepík 2 (responsible for ...)
 
 ## Theoretical description and explanation
 
