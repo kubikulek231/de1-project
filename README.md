@@ -6,8 +6,14 @@
 
 ## Theoretical description and explanation
 
-Enter a description of the problem and how to solve it.
+https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
 
+##Transmitter
+
+converts paralel signal with given configuration settings to serial one, then transmits:
+Start bit, data frame, optional parity bits, end bit
+
+configuration: 8N1 - 1start bit, 8 data bits, 0 parity bits, 1 end bit
 ## Hardware description of demo application
 
 Insert descriptive text and schematic(s) of your implementation.
