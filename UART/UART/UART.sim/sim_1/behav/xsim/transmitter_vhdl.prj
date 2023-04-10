@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../UART.srcs/sources_1/new/clock_enable.vhd" \
-"../../../../UART.srcs/sources_1/new/transmitter.vhd" \
-
-# Do not sort compile order
-nosort

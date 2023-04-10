@@ -2,5 +2,6 @@
 2020.2
 Nov 18 2020
 09:47:47
-C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd,1679399381,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,,,clock_enable,,,,,,,,
-C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,1680610066,vhdl,,,,transmitter,,,,,,,,
+C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd,1681160066,vhdl,,,,tb_serialiser,,,,,,,,
+C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd,1681156728,vhdl,C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd,,,cnt_up_down,,,,,,,,
+C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd,1681160040,vhdl,C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd,,,serialiser,,,,,,,,

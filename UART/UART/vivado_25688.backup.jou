@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 10 22:45:56 2023
+# Process ID: 25688
+# Current directory: C:/Users/Administrator/git/de1-project/UART/UART
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14308 C:\Users\Administrator\git\de1-project\UART\UART\UART.xpr
+# Log file: C:/Users/Administrator/git/de1-project/UART/UART/vivado.log
+# Journal file: C:/Users/Administrator/git/de1-project/UART/UART\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/git/de1-project/UART/UART/UART.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_serialiser.tcl
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {500ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {1ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {10ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {500ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {50ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.no_quit} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.runtime} -value {5000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {500ns} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.log_all_signals} -value {false} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.no_quit} -value {false} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+set_property -name {xsim.simulate.runtime} -value {1000000ps} -objects [get_filesets sim_1]
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+close_sim
+launch_simulation
+source tb_serialiser.tcl
+close_sim

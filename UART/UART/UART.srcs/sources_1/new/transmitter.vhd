@@ -41,8 +41,8 @@ end transmitter;
 
 architecture Behavioral of transmitter is
 -- Internal clock enable
-  signal sig_en : std_logic;
-  constant c_DATA    : std_logic_vector(7 downto 0) := b"10010011"; --! RGB settings for red color
+  signal sig_en      : std_logic;
+  constant c_DATA    : std_logic_vector(7 downto 0) := b"00000000";
 
 begin
   clk_en0 : entity work.clock_enable

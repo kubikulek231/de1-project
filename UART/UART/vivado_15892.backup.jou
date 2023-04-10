@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 10 23:04:32 2023
+# Process ID: 15892
+# Current directory: C:/Users/Administrator/git/de1-project/UART/UART
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16880 C:\Users\Administrator\git\de1-project\UART\UART\UART.xpr
+# Log file: C:/Users/Administrator/git/de1-project/UART/UART/vivado.log
+# Journal file: C:/Users/Administrator/git/de1-project/UART/UART\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/git/de1-project/UART/UART/UART.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_serialiser.tcl
+close_sim
