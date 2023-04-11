@@ -1,7 +1,17 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Running: C:/appz/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=3)\]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [serialiser_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav

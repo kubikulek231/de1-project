@@ -42,7 +42,7 @@ begin
   p_clk_gen : process is
   begin
 
-    while now < 800 ns loop             -- 75 periods of 100MHz clock
+    while now < 800 ns loop            
 
       sig_clk_100mhz <= '0';
       wait for c_CLK_100MHZ_PERIOD / 2;
@@ -60,8 +60,6 @@ begin
     p_reset_gen : process is
   begin
 
-    sig_rst <= '1';
-    wait for 10ns;
     sig_rst <= '0';
 
     wait;
@@ -75,6 +73,8 @@ begin
 
     -- Enable counting
     sig_en <= '1';
+    wait for 200 ns;
+    sig_en <= '0';
     wait;
 
   end process p_en_gen;
