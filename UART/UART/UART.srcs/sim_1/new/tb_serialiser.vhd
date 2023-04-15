@@ -1,24 +1,28 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+use IEEE.std_logic_arith;
 
 entity tb_serialiser is
 --  Port ( );
 end tb_serialiser;
 
 architecture Behavioral of tb_serialiser is
-  constant c_DATA_WIDTH        : natural := 8;
-  constant c_CNT_WIDTH         : natural := 3;
+  constant c_DATA_WIDTH        : natural := 9;
+  constant c_CNT_WIDTH         : natural := 4;
   constant c_CLK_100MHZ_PERIOD : time    := 10 ns;
-  
+
   -- outputs
-  signal serialised_bit        : std_logic;
+  signal sig_serialised_bit    : std_logic;
   -- inputs
   signal sig_clk_100mhz        : std_logic                                     := '0';
-  signal sig_data              : std_logic_vector (c_DATA_WIDTH - 1 downto 0)  := "01101100";
+  signal sig_data_frame        : std_logic_vector (c_DATA_WIDTH - 1 downto 0)  := "111101101";
   signal sig_rst               : std_logic                                     := '0';
   signal sig_en                : std_logic                                     := '1';
   signal sig_cnt_up            : std_logic                                     := '1';
-  signal sig_data_pointer      : std_logic_vector(c_CNT_WIDTH - 1 downto 0);
+  signal sig_data_pointer      : std_logic_vector(c_CNT_WIDTH - 1 downto 0)    := (others => '0');
+  signal sig_data_frame_len    : unsigned(3 downto 0)                          := "0101";
+  
   
 begin
 
@@ -29,11 +33,14 @@ begin
     )
     port map (
       clk                => sig_clk_100mhz,
-      serialised_bit     => serialised_bit,
-      data               => sig_data,
+      serialised_bit     => sig_serialised_bit,
+      data_frame         => sig_data_frame,
       data_pointer       => sig_data_pointer,
-      rst                => sig_rst,
-      en                 => sig_en
+      data_frame_len     => sig_data_frame_len,
+      en                 => sig_en,
+      stop_one_bit       => '0',
+      parity_bit         => '1',
+      parity_odd         => '1'
     );
     
   --------------------------------------------------------
@@ -73,8 +80,6 @@ begin
 
     -- Enable counting
     sig_en <= '1';
-    wait for 200 ns;
-    sig_en <= '0';
     wait;
 
   end process p_en_gen;

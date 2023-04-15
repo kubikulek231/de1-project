@@ -1,0 +1,618 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr 14 16:54:23 2023
+# Process ID: 13512
+# Current directory: C:/Users/Administrator/Desktop/de1-project/UART/UART
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent900 C:\Users\Administrator\Desktop\de1-project\UART\UART\UART.xpr
+# Log file: C:/Users/Administrator/Desktop/de1-project/UART/UART/vivado.log
+# Journal file: C:/Users/Administrator/Desktop/de1-project/UART/UART\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/239122/Desktop/de1-project/UART/UART' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.gen/sources_1', nor could it be found using path 'C:/Users/239122/Desktop/de1-project/UART/UART/UART.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'H:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1181.270 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_enable'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+ERROR: [VRFC 10-719] formal port/generic <rst> is not declared in <serialiser> [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:47]
+ERROR: [VRFC 10-3353] formal port 'data' has no actual or default value [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:39]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:15]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_enable'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+ERROR: [VRFC 10-719] formal port/generic <rst> is not declared in <serialiser> [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:47]
+ERROR: [VRFC 10-3353] formal port 'data' has no actual or default value [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:39]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd:15]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top tb_serialiser [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [serialiser_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xsim.dir/tb_serialiser_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xsim.dir/tb_serialiser_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Apr 14 17:33:01 2023. For additional details about this file, please refer to the WebTalk help file at H:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Apr 14 17:33:01 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1181.270 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+ERROR: Index 9 out of bound 8 downto 0
+Time: 90 ns  Iteration: 1  Process: /tb_serialiser/uut_serialiser/p_serialise
+  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd
+
+HDL Line: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd:50
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 1181.270 ; gain = 0.000
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1181.270 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+ERROR: [VRFC 10-724] found '0' definitions of operator "-", cannot determine exact overloaded matching definition for "-" [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd:52]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd:28]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [serialiser_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1181.270 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [serialiser_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1181.270 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [\serialiser(g_data_width=12)\]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1181.270 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [\serialiser(g_data_width=12)\]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1181.270 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [\serialiser(g_data_width=12)\]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1218.035 ; gain = 1.629
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [\serialiser(g_data_width=12)\]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1221.047 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_serialiser' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_serialiser_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+"xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_serialiser_behav xil_defaultlib.tb_serialiser -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [cnt_up_down_default]
+Compiling architecture behavioral of entity xil_defaultlib.serialiser [serialiser_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_serialiser
+Built simulation snapshot tb_serialiser_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_serialiser_behav -key {Behavioral:sim_1:Functional:tb_serialiser} -tclbatch {tb_serialiser.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb_serialiser.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 500ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+Note: Stimulus process finished
+Time: 0 ps  Iteration: 0  Process: /tb_serialiser/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_serialiser_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 500ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1221.047 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 14 19:58:00 2023...

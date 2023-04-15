@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'serialiser'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_serialiser'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_receiver'
