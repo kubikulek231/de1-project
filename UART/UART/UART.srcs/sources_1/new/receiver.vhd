@@ -179,7 +179,7 @@ architecture Behavioral of receiver is
               else 
                 data_pointer  <= (others => '0');
                 sig_rst <= '1';
-                received_bit <= '0';
+                received_bit <= '1';
               end if;
           received_bit <= data_bit;
       end if;
