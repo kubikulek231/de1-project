@@ -1,0 +1,474 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 12360
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sun Apr 16 13:06:56 CEST 2023
+Time zone: 	Central European Standard Time (Europe/Prague)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	H:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	H:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Kuba
+User home directory: C:/Users/Administrator
+User working directory: C:/Users/Administrator/Desktop/de1-project/UART/UART
+User country: 	CZ
+User language: 	cs
+User locale: 	cs_CZ
+
+RDI_BASEROOT: H:/Xilinx/Vivado
+HDI_APPROOT: H:/Xilinx/Vivado/2020.2
+RDI_DATADIR: H:/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: H:/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/Administrator/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/Administrator/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/Administrator/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	H:/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Administrator/Desktop/de1-project/UART/UART/vivado.log
+Vivado journal file location: 	C:/Users/Administrator/Desktop/de1-project/UART/UART/vivado.jou
+Engine tmp dir: 	C:/Users/Administrator/Desktop/de1-project/UART/UART/.Xil/Vivado-12360-DESKTOP-HKRIU33
+
+Xilinx Environment Variables
+----------------------------
+WWISESDK: C:\Program Files (x86)\Audiokinetic\Wwise 2019.2.9.7459\SDK
+XILINX: H:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: H:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: H:/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: H:/Xilinx/Vivado/2020.2
+XILINX_VIVADO: H:/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: H:/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	162 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,030 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Administrator\Desktop\de1-project\UART\UART\UART.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 97 MB (+99319kb) [00:00:10]
+// [Engine Memory]: 1,030 MB (+928111kb) [00:00:10]
+// [GUI Memory]: 117 MB (+15329kb) [00:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  3427 ms.
+// Tcl Message: open_project C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'H:/Xilinx/Vivado/2020.2/data/ip'. 
+// Project name: UART; location: C:/Users/Administrator/Desktop/de1-project/UART/UART; part: xc7a50ticsg324-1L
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 69 MB. Current time: 4/16/23, 1:06:56 PM CEST
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1568 ms. Increasing delay to 4704 ms.
+// [GUI Memory]: 123 MB (+1007kb) [00:00:18]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 37 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 6); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_receiver(Behavioral) (tb_receiver.vhd)]", 9, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_receiver(Behavioral) (tb_receiver.vhd)]", 9, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_receiver [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Set as Top : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Set as Top"); // bz
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 131 MB (+1293kb) [00:01:02]
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'tb_receiver' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: "xvhdl --incr --relax -prj tb_receiver_vhdl.prj" 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_receiver_behav xil_defaultlib.tb_receiver -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Vivado Simulator 2020.2 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved. Running: H:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_receiver_behav xil_defaultlib.tb_receiver -log elaborate.log  Using 2 slave threads. Starting static elaboration Completed static elaboration INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_receiver_behav -key {Behavioral:sim_1:Functional:tb_receiver} -tclbatch {tb_receiver.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// [GUI Memory]: 138 MB (+880kb) [00:01:08]
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source tb_receiver.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 91 MB. Current time: 4/16/23, 1:07:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 500ns 
+// Tcl Message: Note: Stimulus process started Time: 0 ps  Iteration: 0  Process: /tb_receiver/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_receiver_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 500ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1176.871 ; gain = 0.000 
+// 'd' command handler elapsed time: 8 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 92 MB. Current time: 4/16/23, 1:07:57 PM CEST
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_transmitter(Behavioral) (tb_transmitter.vhd)]", 10, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_transmitter [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+// [GUI Memory]: 145 MB (+211kb) [00:01:27]
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: boost::filesystem::remove: Proces nemá pøístup k souboru, nebo jej právì využívá jiný proces: "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/simulate.log" 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: boost::filesystem::remove: Proces nemá pøístup k souboru, nebo jej právì využívá jiný proces: "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/simulate.log" 
+// HOptionPane Error: 'boost::filesystem::remove: Proces nemá pøístup k souboru, nebo jej právì využívá jiný proces: "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/ behav/xsim/simulate.log" (Run Simulation)'
+selectButton("OptionPane.button", "OK"); // JButton
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1: close view
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1"); // w
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - tb_receiver", "DesignTask.SIMULATION");
+// A (cr): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Close : addNotify
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+dismissDialog("Confirm Close"); // A
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+dismissDialog("Close"); // bz
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_transmitter(Behavioral) (tb_transmitter.vhd)]", 7, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'tb_transmitter' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj tb_transmitter_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'transmitter' INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'tb_transmitter' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto da1b61fb28934d83b209aa1767bcf3d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_transmitter_behav xil_defaultlib.tb_transmitter -log elaborate.log" 
+// Tcl Message:  ****** Webtalk v2020.2 (64-bit)   **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020   **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.  source C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xsim.dir/tb_transmitter_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xsim.dir/tb_transmitter_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 16 13:08:37 2023. For additional details about this file, please refer to the WebTalk help file at H:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Sun Apr 16 13:08:37 2023... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1176.871 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_transmitter_behav -key {Behavioral:sim_1:Functional:tb_transmitter} -tclbatch {tb_transmitter.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 10 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 94 MB. Current time: 4/16/23, 1:08:39 PM CEST
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// Tcl Message: source tb_transmitter.tcl 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 500ns 
+// Tcl Message: Note: Stimulus process started Time: 0 ps  Iteration: 0  Process: /tb_transmitter/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd Note: Stimulus process finished Time: 0 ps  Iteration: 0  Process: /tb_transmitter/p_stimulus  File: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_transmitter_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 500ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1176.871 ; gain = 0.000 
+// 'd' command handler elapsed time: 11 seconds
+dismissDialog("Run Simulation"); // e
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 94 MB. Current time: 4/16/23, 1:08:40 PM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 247 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 93 MB. Current time: 4/16/23, 1:12:48 PM CEST
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 94 MB. Current time: 4/16/23, 1:12:50 PM CEST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_serialiser(Behavioral) (tb_serialiser.vhd)]", 10, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ak
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cr): Remove Sources: addNotify
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete the project local file/directory from disk", true); // g: TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Remove Sources"); // aE
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// aE (cr): Remove Sources: addNotify
+// bz (aE):  Remove Sources : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  -fileset sim_1 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd 
+// Tcl Message: file delete -force C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd 
+dismissDialog("Remove Sources"); // bz
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 10); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, transmitter(Behavioral) (transmitter.vhd)]", 3); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, receiver(Behavioral) (receiver.vhd)]", 2); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd), bin_cnt0 : serialiser(Behavioral) (serialiser.vhd)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd), bin_cnt0 : serialiser(Behavioral) (serialiser.vhd)]", 3, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd), bin_cnt0 : serialiser(Behavioral) (serialiser.vhd)]", 3, true, false, false, false, true, false); // D - Popup Trigger - Node
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 20 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd), bin_cnt0 : serialiser(Behavioral) (serialiser.vhd)]", 3); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(behavioral) (top.vhd)]", 1); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, receiver(Behavioral) (receiver.vhd)]", 2); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, transmitter(Behavioral) (transmitter.vhd)]", 3); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(behavioral) (top.vhd)]", 9, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(behavioral) (top.vhd)]", 9, true, false, false, false, false, true); // D - Double Click - Node
+// [GUI Memory]: 153 MB (+568kb) [00:30:16]
+// Elapsed time: 1547 seconds
+selectCodeEditor("top.vhd", 244, 558); // bP
+// Elapsed time: 84 seconds
+selectCodeEditor("top.vhd", 266, 250); // bP
+selectCodeEditor("top.vhd", 230, 441); // bP
+selectCodeEditor("top.vhd", 274, 502); // bP
+selectCodeEditor("top.vhd", 275, 550); // bP
+// Elapsed time: 34 seconds
+selectCodeEditor("top.vhd", 96, 283); // bP
+selectCodeEditor("top.vhd", 96, 283, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 448, 273); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 95 MB. Current time: 4/16/23, 1:42:51 PM CEST
+// Elapsed time: 73 seconds
+selectCodeEditor("top.vhd", 286, 107); // bP
+selectCodeEditor("top.vhd", 224, 91); // bP
+selectCodeEditor("top.vhd", 224, 91, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 328, 120); // bP
+selectCodeEditor("top.vhd", 324, 112); // bP
+selectCodeEditor("top.vhd", 232, 98); // bP
+selectCodeEditor("top.vhd", 232, 98, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "top.vhd", 'c'); // bP
+selectCodeEditor("top.vhd", 215, 109); // bP
+selectCodeEditor("top.vhd", 215, 109, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "top.vhd", 'v'); // bP
+selectCodeEditor("top.vhd", 302, 117); // bP
+selectCodeEditor("top.vhd", 359, 126); // bP
+selectCodeEditor("top.vhd", 357, 106); // bP
+selectCodeEditor("top.vhd", 452, 159); // bP
+selectCodeEditor("top.vhd", 182, 146); // bP
+// Elapsed time: 15 seconds
+selectCodeEditor("top.vhd", 39, 283); // bP
+selectCodeEditor("top.vhd", 39, 283, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 285, 275); // bP
+// Elapsed time: 1052 seconds
+selectCodeEditor("top.vhd", 742, 757); // bP
+// Elapsed time: 324 seconds
+selectCodeEditor("top.vhd", 220, 657); // bP
+selectCodeEditor("top.vhd", 220, 657, false, false, false, false, true); // bP - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 87 MB. Current time: 4/16/23, 2:12:51 PM CEST
+// Elapsed time: 678 seconds
+selectCodeEditor("top.vhd", 306, 659); // bP
+selectCodeEditor("top.vhd", 213, 661); // bP
+selectCodeEditor("top.vhd", 213, 661, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 375, 596); // bP
+selectCodeEditor("top.vhd", 201, 658); // bP
+selectCodeEditor("top.vhd", 201, 658, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("top.vhd", 378, 615); // bP
+selectCodeEditor("top.vhd", 256, 667); // bP
+selectCodeEditor("top.vhd", 214, 653); // bP
+selectCodeEditor("top.vhd", 214, 654, false, false, false, false, true); // bP - Double Click
+// Elapsed time: 304 seconds
+selectCodeEditor("top.vhd", 330, 603); // bP
+selectCodeEditor("top.vhd", 292, 611); // bP
+selectCodeEditor("top.vhd", 251, 628); // bP
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(behavioral) (top.vhd)]", 9, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenuItem(PAResourceQtoS.SrcMenu_OPEN_SELECTED_SOURCE_FILES, "Open File"); // ak
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, top(behavioral) (top.vhd)]", 9, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah

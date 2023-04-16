@@ -4,6 +4,8 @@ Nov 18 2020
 09:47:47
 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd,1681601392,vhdl,,,,tb_receiver,,,,,,,,
 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd,1681576982,vhdl,,,,tb_serialiser,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd,1681484045,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd,,,cnt_up_down,,,,,,,,
+C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd,1681641637,vhdl,,,,tb_transmitter,,,,,,,,
+C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd,1681484045,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,,,cnt_up_down,,,,,,,,
 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd,1681601166,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd,,,receiver,,,,,,,,
 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd,1681589779,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd,,,serialiser,,,,,,,,
+C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,1681641524,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd,,,transmitter,,,,,,,,

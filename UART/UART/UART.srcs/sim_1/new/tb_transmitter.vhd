@@ -3,11 +3,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 use IEEE.std_logic_arith;
 
-entity tb_serialiser is
+entity tb_transmitter is
 --  Port ( );
-end tb_serialiser;
+end tb_transmitter;
 
-architecture Behavioral of tb_serialiser is
+architecture Behavioral of tb_transmitter is
   constant c_DATA_WIDTH        : natural := 9;
   constant c_CNT_WIDTH         : natural := 4;
   constant c_CLK_100MHZ_PERIOD : time    := 10 ns;
@@ -26,7 +26,7 @@ architecture Behavioral of tb_serialiser is
   
 begin
 
-  uut_serialiser : entity work.serialiser
+  uut_serialiser : entity work.transmitter
     generic map (
       g_CNT_WIDTH  => c_CNT_WIDTH,
       g_DATA_WIDTH => c_DATA_WIDTH
