@@ -1,7 +1,7 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
-use IEEE.std_logic_arith;
+use ieee.std_logic_arith;
 
 entity tb_transmitter is
 --  Port ( );
@@ -26,7 +26,7 @@ architecture Behavioral of tb_transmitter is
   
 begin
 
-  uut_serialiser : entity work.transmitter
+  uut_transmitter : entity work.transmitter
     generic map (
       g_CNT_WIDTH  => c_CNT_WIDTH,
       g_DATA_WIDTH => c_DATA_WIDTH
@@ -37,6 +37,7 @@ begin
       data_frame         => sig_data_frame,
       data_pointer       => sig_data_pointer,
       data_frame_len     => sig_data_frame_len,
+      rst                => '0',
       en                 => sig_en,
       stop_one_bit       => '0',
       parity_bit         => '1',

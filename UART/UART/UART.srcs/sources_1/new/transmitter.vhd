@@ -1,7 +1,7 @@
-library IEEE;
+library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use IEEE.std_logic_arith;
+use ieee.std_logic_arith;
 
 -- Define the transmitter entity
 entity transmitter is
@@ -13,6 +13,7 @@ entity transmitter is
   port (
     -- global
     clk            : in  std_logic;
+    rst            : in  std_logic;
     -- counter part
     en             : in  std_logic;
     -- main part
@@ -79,79 +80,87 @@ architecture Behavioral of transmitter is
   p_serialise : process (clk) is
   begin
     if (rising_edge(clk)) then
-      if (en = '1') then
-        case sig_state is
-          -- Outputs start bit
-          when START =>
-            sig_rst <= '0';
-            serialised_bit <= '0';
-            sig_state <= DATA;
-          
-          -- Serialises data sequence and outputs one bit by another with clk
-          when DATA =>
-            sig_rst <= '0';
-            serialised_bit <= data_frame(to_integer(unsigned(sig_cnt)));
-            data_pointer   <= sig_cnt;
-            if (unsigned(sig_cnt) = data_frame_len - 1) then
-                if (parity_bit = '1') then
-                    sig_state <= PARITY;
-                else
-                    sig_state <= STOP;
+      if (rst = '1') then
+          sig_rst <= '1';
+          sig_state <= START;
+          serialised_bit <= '1';
+          data_pointer <= "0000";
+          is_second := false;
+      else
+          if (en = '1') then
+            case sig_state is
+              -- Outputs start bit
+              when START =>
+                sig_rst <= '0';
+                serialised_bit <= '0';
+                sig_state <= DATA;
+              
+              -- Serialises data sequence and outputs one bit by another with clk
+              when DATA =>
+                sig_rst <= '0';
+                serialised_bit <= data_frame(to_integer(unsigned(sig_cnt)));
+                data_pointer   <= sig_cnt;
+                if (unsigned(sig_cnt) = data_frame_len - 1) then
+                    if (parity_bit = '1') then
+                        sig_state <= PARITY;
+                    else
+                        sig_state <= STOP;
+                    end if;
                 end if;
-            end if;
-          
-          -- Outputs odd/even parity bits, or is omitted when required
-          when PARITY =>
-              data_pointer <= "0000";
-              sig_rst <= '1';
               
-              -- If odd parity is selected
-              if (parity_odd = '1') then
-                  -- If the number of '1's in the data frame is odd, the parity bit is 0 and otherwise
-                  if (is_odd(data_frame)) then
-                      serialised_bit <= '0';
+              -- Outputs odd/even parity bits, or is omitted when required
+              when PARITY =>
+                  data_pointer <= "0000";
+                  sig_rst <= '1';
+                  
+                  -- If odd parity is selected
+                  if (parity_odd = '1') then
+                      -- If the number of '1's in the data frame is odd, the parity bit is 0 and otherwise
+                      if (is_odd(data_frame)) then
+                          serialised_bit <= '0';
+                      else
+                          serialised_bit <= '1';
+                      end if;
+                  -- If even parity is selected
                   else
-                      serialised_bit <= '1';
+                      -- If the number of '1's in the data frame is odd, the parity bit is 1 and otherwise
+                      if (is_odd(data_frame)) then
+                          serialised_bit <= '1';
+                      else
+                          serialised_bit <= '0';
+                      end if;
                   end if;
-              -- If even parity is selected
-              else
-                  -- If the number of '1's in the data frame is odd, the parity bit is 1 and otherwise
-                  if (is_odd(data_frame)) then
-                      serialised_bit <= '1';
-                  else
-                      serialised_bit <= '0';
-                  end if;
-              end if;
+                  
+                  -- Transition to the STOP state
+                  sig_state <= STOP;
               
-              -- Transition to the STOP state
-              sig_state <= STOP;
-          
-          -- Outputs the required number of stop bits
-          when STOP =>
-              data_pointer <= "0000";
-              sig_rst <= '1';
-              
-              -- If only one stop bit is required
-              if (stop_one_bit = '1') then
-                  serialised_bit <= '1';
-                  sig_state <= START;
-              else
-                  -- Switches to start after 2 iterations
-                  if (not is_second) then
-                      serialised_bit <= '1';
-                      is_second := true;
-                  else
+              -- Outputs the required number of stop bits
+              when STOP =>
+                  data_pointer <= "0000";
+                  sig_rst <= '1';
+                  
+                  -- If only one stop bit is required
+                  if (stop_one_bit = '1') then
                       serialised_bit <= '1';
                       sig_state <= START;
-                      is_second := false;
+                  else
+                      -- Switches to start after 2 iterations
+                      if (not is_second) then
+                          serialised_bit <= '1';
+                          is_second := true;
+                      else
+                          serialised_bit <= '1';
+                          sig_state <= START;
+                          is_second := false;
+                      end if;
                   end if;
-              end if;
-          end case;
-        else 
-          serialised_bit <= '1';
-          data_pointer  <= (others => '0');
+              end case;
+            else 
+              serialised_bit <= '1';
+              data_pointer  <= (others => '0');
+            end if;
+          end if;
         end if;
-      end if;
     end process p_serialise;
    
 end Behavioral;

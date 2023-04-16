@@ -1,7 +1,7 @@
-library IEEE;
+library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use IEEE.std_logic_arith;
+use ieee.std_logic_arith;
 
 entity receiver is
   generic (
@@ -12,6 +12,7 @@ entity receiver is
   port (
     -- global
     clk            : in  std_logic;
+    rst            : in  std_logic;
     -- counter part
     en             : in  std_logic;
     -- main part
@@ -83,96 +84,106 @@ architecture Behavioral of receiver is
   p_deserialise : process (clk) is
   begin
       if (rising_edge(clk)) then
-      if (en = '1') then
-        case sig_state is
-            
-            -- outputs start bit
-            when IDLE =>
-            if (data_bit = '0') then
-                sig_state <= DATA;
-                sig_rst <= '0';
-            else 
-            end if;
-            
-            -- serialises data seqeunce and outputs one bit by another with clk
-            when DATA =>
+          if (rst = '1') then
+            sig_rst <= '1';
+            received_bit <= '0';
+            sig_state <= IDLE;
+            data_pointer <= "0000";
             is_finished <= false;
             is_data_ok <= false;
             sig_is_frame_ok <= true;
-            sig_rst <= '0';
-            sig_data_frame(to_integer(unsigned(sig_cnt))) <= data_bit;
-            data_pointer   <= sig_cnt;
-            if (unsigned(sig_cnt) = data_frame_len - 1) then
-                if (parity_bit = '1') then
-                    sig_state <= PARITY;
-                else
-                    sig_state <= STOP;
-                    data_frame <= sig_data_frame;
-                end if;
-            end if;
-            
-            -- outputs odd/even parity bits, or is omitted when required
-            when PARITY =>
-            data_pointer <= "0000";
-            sig_rst <= '1';
-              -- if odd parity
-              if (parity_odd = '1') then
-              -- if number of 1s in the data frame is odd, parity bit is 0 and otherwise
-                if (is_odd(sig_data_frame) and data_bit = '1') then
-                    is_data_ok <= true;
-                else
+            is_second := false;
+          else
+              if (en = '1') then
+                case sig_state is
+                    
+                    -- outputs start bit
+                    when IDLE =>
+                    if (data_bit = '0') then
+                        sig_state <= DATA;
+                        sig_rst <= '0';
+                    else 
+                    end if;
+                    
+                    -- serialises data seqeunce and outputs one bit by another with clk
+                    when DATA =>
+                    is_finished <= false;
                     is_data_ok <= false;
-                end if;
-              -- if even parity
-              else
-              -- if number of 1s in the data frame is odd, parity bit is 1 and otherwise
-                if (is_odd(sig_data_frame) and data_bit = '0') then
-                    is_data_ok <= true;
-                else
-                    is_data_ok <= false;
-                end if;
-              end if;
-              sig_state <= STOP;
-              
-              when STOP =>
-              data_pointer <= "0000";
-              sig_rst <= '1';
-              
-              -- If only one stop bit is required
-              if (stop_one_bit = '1') then
-                  if (data_bit = '1') then
-                  is_finished <= true;
-                  data_frame <= sig_data_frame;
-                  sig_state <= IDLE;
-                  end if;
-              else
-                  -- Switches to start after 2 iterations
-                  if (not is_second) then
-                      if (data_bit = '0') then
-                        sig_is_frame_ok <= false;
-                      end if;
-                      is_second := true;
-                  else
-                      if (not sig_is_frame_ok or data_bit = '0') then
-                        is_finished <= false;
+                    sig_is_frame_ok <= true;
+                    sig_rst <= '0';
+                    sig_data_frame(to_integer(unsigned(sig_cnt))) <= data_bit;
+                    data_pointer   <= sig_cnt;
+                    if (unsigned(sig_cnt) = data_frame_len - 1) then
+                        if (parity_bit = '1') then
+                            sig_state <= PARITY;
+                        else
+                            sig_state <= STOP;
+                            data_frame <= sig_data_frame;
+                        end if;
+                    end if;
+                    
+                    -- outputs odd/even parity bits, or is omitted when required
+                    when PARITY =>
+                    data_pointer <= "0000";
+                    sig_rst <= '1';
+                      -- if odd parity
+                      if (parity_odd = '1') then
+                      -- if number of 1s in the data frame is odd, parity bit is 0 and otherwise
+                        if (is_odd(sig_data_frame) and data_bit = '1') then
+                            is_data_ok <= true;
+                        else
+                            is_data_ok <= false;
+                        end if;
+                      -- if even parity
                       else
-                        data_frame <= sig_data_frame;
-                        is_finished <= true;
-                        sig_state <= IDLE;
+                      -- if number of 1s in the data frame is odd, parity bit is 1 and otherwise
+                        if (is_odd(sig_data_frame) and data_bit = '0') then
+                            is_data_ok <= true;
+                        else
+                            is_data_ok <= false;
+                        end if;
                       end if;
-                      is_second := false;
-                  end if;
+                      sig_state <= STOP;
+                      
+                      when STOP =>
+                      data_pointer <= "0000";
+                      sig_rst <= '1';
+                      
+                      -- If only one stop bit is required
+                      if (stop_one_bit = '1') then
+                          if (data_bit = '1') then
+                          is_finished <= true;
+                          data_frame <= sig_data_frame;
+                          sig_state <= IDLE;
+                          end if;
+                      else
+                          -- Switches to start after 2 iterations
+                          if (not is_second) then
+                              if (data_bit = '0') then
+                                sig_is_frame_ok <= false;
+                              end if;
+                              is_second := true;
+                          else
+                              if (not sig_is_frame_ok or data_bit = '0') then
+                                is_finished <= false;
+                              else
+                                data_frame <= sig_data_frame;
+                                is_finished <= true;
+                                sig_state <= IDLE;
+                              end if;
+                              is_second := false;
+                          end if;
+                      end if;
+        
+                end case;
+              else 
+                data_pointer  <= (others => '0');
+                sig_rst <= '1';
+                received_bit <= '0';
               end if;
-
-        end case;
-      else 
-        data_pointer  <= (others => '0');
-        sig_rst <= '1';
-        received_bit <= '0';
+          received_bit <= data_bit;
       end if;
-  received_bit <= data_bit;
-  
-  end if;
+    end if;
   end process p_deserialise;
   
  

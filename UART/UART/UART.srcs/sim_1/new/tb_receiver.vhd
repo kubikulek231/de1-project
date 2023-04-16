@@ -1,7 +1,7 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
-use IEEE.std_logic_arith;
+use ieee.std_logic_arith;
 
 entity tb_receiver is
 --  Port ( );
@@ -39,6 +39,7 @@ begin
       data_frame_len     => sig_data_frame_len,
       data_bit           => sig_data_bit,
       en                 => sig_en,
+      rst                => '1',
       stop_one_bit       => '0',
       parity_bit         => '1',
       parity_odd         => '1',
