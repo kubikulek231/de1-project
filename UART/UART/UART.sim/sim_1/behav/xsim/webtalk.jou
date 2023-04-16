@@ -2,8 +2,8 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Apr 16 13:08:34 2023
-# Process ID: 25344
+# Start of session at: Sun Apr 16 14:38:10 2023
+# Process ID: 14648
 # Current directory: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/xsim.dir/tb_transmitter_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.sim/sim_1/behav/xsim/webtalk.log

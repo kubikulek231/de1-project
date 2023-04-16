@@ -35,3 +35,5 @@ source tb_transmitter.tcl
 export_ip_user_files -of_objects  [get_files C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd] -no_script -reset -force -quiet
 remove_files  -fileset sim_1 C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
 file delete -force C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_serialiser.vhd
+update_compile_order -fileset sources_1
+close_sim

@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity top is
     Port ( CLK100MHZ : in STD_LOGIC;
            SW        : in std_logic_vector (15 downto 0);
-           LED       : out std_logic
+           LED       : out std_logic_vector (15 downto 0)
            );
 end top;
 
