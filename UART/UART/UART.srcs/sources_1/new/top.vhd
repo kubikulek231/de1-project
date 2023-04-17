@@ -16,7 +16,16 @@ entity top is
            -- serial in
            J_IN      : in std_logic;
            -- serial out
-           J_OUT     : out std_logic
+           J_OUT     : out std_logic;
+           -- segmented display out
+           CA        : out std_logic;
+           CB        : out std_logic;
+           CC        : out std_logic;
+           CD        : out std_logic;
+           CE        : out std_logic;
+           CF        : out std_logic;
+           CG        : out std_logic;
+           AN        : out std_logic_vector (7 downto 0)
            );
 end top;
 
@@ -26,22 +35,46 @@ end top;
 
 architecture behavioral of top is
 
-  signal   sig_clk      : std_logic;   
-  signal   sig_tx_en    : std_logic;
-  signal   sig_rx_en    : std_logic;
-  signal   sig_tx_rs    : std_logic;
-  signal   sig_rx_rs    : std_logic;
-  signal   sig_dframe_l : unsigned(3 downto 0);
-  constant c_9600_baud  : natural := 10416;            
+  -- variable clock signal
+  signal sig_clk       : std_logic;
+  -- enable signals   
+  signal sig_tx_en     : std_logic;
+  signal sig_rx_en     : std_logic;
+  -- reset signals
+  signal sig_tx_rs     : std_logic;
+  signal sig_rx_rs     : std_logic;
+  -- data frame length signal
+  signal sig_dframe_l  : unsigned(3 downto 0);
+  -- clock enable g_max variable 
+  shared variable var_baudrate  : natural := 9600;    
+  
+  -- display input hex signal   
+  signal sig_hex       : std_logic_vector(3 downto 0) := "0000";
+  -- display output seg signal
+  signal sig_seg       : std_logic_vector(6 downto 0) := "1111111";
+
+  -- used for extracting first digit of number
+  function extract_digit(num : natural; digit : natural) return natural is
+    variable target_digit : natural range 0 to 9;
+  begin
+    -- check whether specified digit is within range
+    assert digit < integer(log10(real(num))) + 1
+      report "specified digit is out of range" severity failure;
+    -- extract the specified digit
+    target_digit := (num / 10**(digit-1)) mod 10;
+    return target_digit;
+  end function;
 
 begin
+
 
   --------------------------------------------------------
   -- Instance of clock_enable entity
   --------------------------------------------------------
   clk_en : entity work.clock_enable
       generic map(
-          g_MAX => c_9600_baud
+          -- calculate number of ticks needed for given baudrate
+          g_MAX => 100000000 / var_baudrate
       )
       port map(
           clk => CLK100MHZ,
@@ -72,6 +105,7 @@ begin
             -- serial out
             serialised_bit => J_OUT
       );
+      
   --------------------------------------------------------
   -- Instance of receiver entity
   --------------------------------------------------------
@@ -96,24 +130,80 @@ begin
             data_bit       => J_IN
       );
       
-  p_set : process (CLK100MHZ) is
+  --------------------------------------------------------
+  -- Instance of hex_7seg entity
+  --------------------------------------------------------
+      
+  hex_7seg : entity work.hex_7seg
+  port map(
+      blank    => '0',
+      hex      => sig_hex,
+      seg(6)   => CA,
+      seg(5)   => CB,
+      seg(4)   => CC,
+      seg(3)   => CD,
+      seg(2)   => CE,
+      seg(1)   => CF,
+      seg(0)   => CG
+  );
+  
+  p_display_driver : process (CLK100MHZ)
+    variable i : integer := 0;
   begin
-      if (rising_edge(CLK100MHZ)) then
-          if (BTNC = '1') then
-            sig_tx_rs <= '1';
-            sig_rx_rs <= '1';
-          else
-            sig_tx_rs <= '0';
-            sig_rx_rs <= '0';
-          end if;
-          sig_rx_en <= SW(0);
-          sig_tx_en <= not SW(0);
-          sig_rx_rs <= not SW(0);
-          sig_tx_rs <= SW(0);
-          -- set unused LEDs to 0 so they don't float
-          LED(6 downto 0) <= SW(6 downto 0);
-      end if;
-  end process p_set;
+    if rising_edge(CLK100MHZ) then
+      i := i + 1;
+        case i is
+              -- display TX / RX mode
+              when 1 =>
+                an  <= "01111111";
+                if SW(0) = '0' then
+                  sig_hex <= "1010"; -- Tx
+                else
+                  sig_hex <= "1011"; -- Rx
+                end if;
+              -- display data frame length
+              when 2 =>
+                an  <= "10111111";
+                sig_hex <= std_logic_vector(sig_dframe_l);
+              -- display parity N/O/E
+              when 3 =>
+                an  <= "11011111";
+                if SW (3) = '1' then
+                  if SW (2) = '1' then
+                    sig_hex <= "1101"; -- Odd
+                  else 
+                    sig_hex <= "1110"; -- Even
+                  end if;
+                else
+                  sig_hex <= "1100"; -- No
+                end if;
+              -- display stop bit/s
+              when 4 =>
+                an  <= "11101111";
+                if SW (1) = '1' then
+                    sig_hex <= "0001"; -- 1
+                  else 
+                    sig_hex <= "0010"; -- 2
+                end if;
+              -- display first 4 numbers from baudrate
+              when 5 =>
+                an  <= "11110111";
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 1), 4));
+              when 6 =>
+                an  <= "11111011";
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 2), 4));
+              when 7 =>
+                an  <= "11111101";
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 3), 4));
+              when 8 =>
+                an  <= "11111110";
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 4), 4));
+                i := 0;
+              when others =>
+              -- do nothing
+       end case;
+    end if;
+  end process p_display_driver;
   
   p_set_dframe_len : process (CLK100MHZ) is
   begin
