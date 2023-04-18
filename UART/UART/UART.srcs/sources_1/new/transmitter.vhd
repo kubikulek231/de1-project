@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_arith;
 
--- Define the transmitter entity
+-- define the transmitter entity
 entity transmitter is
   generic (
     g_DATA_WIDTH : natural := 9;
@@ -11,12 +11,10 @@ entity transmitter is
   );
   
   port (
-    -- global
     clk            : in  std_logic;
     rst            : in  std_logic;
-    -- counter part
     en             : in  std_logic;
-    -- main part
+
     data_frame     : in  std_logic_vector(g_DATA_WIDTH - 1 downto 0);
     data_frame_len : in unsigned(3 downto 0);
     
@@ -29,8 +27,10 @@ entity transmitter is
   );
 end transmitter;
 
--- Define the architecture for the transmitter entity
+-- define the architecture for the transmitter entity
 architecture Behavioral of transmitter is
+
+  -- enum for different transmitter actions
   type t_tx_state is (
     START,
     DATA,
@@ -38,13 +38,16 @@ architecture Behavioral of transmitter is
     STOP
   );
 
-  -- Internal count signal
+  -- internal state signal
   signal sig_state      : t_tx_state                                 := START;
+  -- internal count signal
   signal sig_cnt        : std_logic_vector(g_CNT_WIDTH - 1 downto 0) := (others => '0');
+  -- internal reset signal
   signal sig_rst        : std_logic                                  := '1';
+  -- global variable to indicate what stop bit is next
   shared variable is_second : boolean := false;
 
-  -- Function to check if the number of '1's in a std_logic_vector is odd
+  -- function to check if the number of '1's in a std_logic_vector is odd
   function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0)) return boolean is
     variable temp_count : unsigned(3 downto 0)  := (others => '0');
     variable temp_odd   : boolean := true;
@@ -63,7 +66,8 @@ architecture Behavioral of transmitter is
   end function is_odd;
 
   begin
-  -- Instantiate the up-down counter
+  
+  -- instantiate the up-down counter
   uut_cnt : entity work.cnt_up_down
   generic map (
     g_CNT_WIDTH => g_CNT_WIDTH
@@ -76,7 +80,7 @@ architecture Behavioral of transmitter is
     cnt    => sig_cnt
   );
 
-  -- Process to serialise the data
+  -- process to serialise the data
   p_serialise : process (clk) is
   begin
     if (rising_edge(clk)) then
@@ -89,13 +93,14 @@ architecture Behavioral of transmitter is
       else
           if (en = '1') then
             case sig_state is
-              -- Outputs start bit
+            
+              -- outputs start bit
               when START =>
                 sig_rst <= '0';
                 serialised_bit <= '0';
                 sig_state <= DATA;
               
-              -- Serialises data sequence and outputs one bit by another with clk
+              -- serialises data sequence and outputs one bit by another with clk
               when DATA =>
                 sig_rst <= '0';
                 serialised_bit <= data_frame(to_integer(unsigned(sig_cnt)));
@@ -108,22 +113,22 @@ architecture Behavioral of transmitter is
                     end if;
                 end if;
               
-              -- Outputs odd/even parity bits, or is omitted when required
+              -- outputs odd/even parity bits, or is omitted when required
               when PARITY =>
                   data_pointer <= "0000";
                   sig_rst <= '1';
                   
-                  -- If odd parity is selected
+                  -- if odd parity is selected
                   if (parity_odd = '1') then
-                      -- If the number of '1's in the data frame is odd, the parity bit is 0 and otherwise
+                      -- if the number of '1's in the data frame is odd, the parity bit is 0 and otherwise
                       if (is_odd(data_frame)) then
                           serialised_bit <= '0';
                       else
                           serialised_bit <= '1';
                       end if;
-                  -- If even parity is selected
+                  -- if even parity is selected
                   else
-                      -- If the number of '1's in the data frame is odd, the parity bit is 1 and otherwise
+                      -- if the number of '1's in the data frame is odd, the parity bit is 1 and otherwise
                       if (is_odd(data_frame)) then
                           serialised_bit <= '1';
                       else
@@ -131,20 +136,20 @@ architecture Behavioral of transmitter is
                       end if;
                   end if;
                   
-                  -- Transition to the STOP state
+                  -- transition to the STOP state
                   sig_state <= STOP;
               
-              -- Outputs the required number of stop bits
+              -- outputs the required number of stop bits
               when STOP =>
                   data_pointer <= "0000";
                   sig_rst <= '1';
                   
-                  -- If only one stop bit is required
+                  -- if only one stop bit is required
                   if (stop_one_bit = '1') then
                       serialised_bit <= '1';
                       sig_state <= START;
                   else
-                      -- Switches to start after 2 iterations
+                      -- switches to start after 2 iterations
                       if (not is_second) then
                           serialised_bit <= '1';
                           is_second := true;

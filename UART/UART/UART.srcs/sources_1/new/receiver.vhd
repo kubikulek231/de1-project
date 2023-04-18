@@ -10,12 +10,10 @@ entity receiver is
   );
   
   port (
-    -- global
     clk            : in  std_logic;
     rst            : in  std_logic;
-    -- counter part
     en             : in  std_logic;
-    -- main part
+
     data_frame     : out  std_logic_vector(g_DATA_WIDTH - 1 downto 0) := (others => '0');
     data_frame_len : in unsigned(3 downto 0);
     
@@ -34,6 +32,8 @@ entity receiver is
 end receiver;
 
 architecture Behavioral of receiver is
+
+  -- enum for different receiver actions
   type t_rx_state is (
     IDLE,
     DATA,
@@ -45,20 +45,20 @@ architecture Behavioral of receiver is
   signal sig_cnt        : std_logic_vector(g_CNT_WIDTH - 1 downto 0)  := (others => '0');
   signal sig_rst        : std_logic                                   := '1';
   signal sig_data_frame : std_logic_vector(g_DATA_WIDTH - 1 downto 0) := (others => '0');
+  -- global variable to indicate what stop bit is next
   shared variable is_second : boolean                                 := false;
+  -- frame ok signal
   signal sig_is_frame_ok    : boolean                                 := false;
-    
-  function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0)) return boolean is
   
-  variable temp_count : unsigned(3 downto 0)  := (others => '0');
-  variable temp_odd   : boolean := true;
+  -- function to check if the number of '1's in a std_logic_vector is odd
+  function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0)) return boolean is
+   variable temp_count : unsigned(3 downto 0)  := (others => '0');
+   variable temp_odd   : boolean := true;
   begin
     for i in s'range loop
-    
       if s(i) = '1' then 
         temp_count := temp_count + 1; 
       end if;
-      
     end loop;
     
     if temp_count(0) = '0' then 
@@ -69,6 +69,8 @@ architecture Behavioral of receiver is
   end function is_odd;
     
   begin
+  
+  -- instantiate the up-down counter
   uut_cnt : entity work.cnt_up_down
   generic map (
     g_CNT_WIDTH => g_CNT_WIDTH
@@ -80,7 +82,8 @@ architecture Behavioral of receiver is
     cnt_up => '1',
     cnt    => sig_cnt
   );
-
+  
+  -- process to deserialise the received data
   p_deserialise : process (clk) is
   begin
       if (rising_edge(clk)) then
@@ -149,7 +152,7 @@ architecture Behavioral of receiver is
                       data_pointer <= "0000";
                       sig_rst <= '1';
                       
-                      -- If only one stop bit is required
+                      -- if only one stop bit is required
                       if (stop_one_bit = '1') then
                           if (data_bit = '1') then
                           is_finished <= true;
@@ -157,7 +160,7 @@ architecture Behavioral of receiver is
                           sig_state <= IDLE;
                           end if;
                       else
-                          -- Switches to start after 2 iterations
+                          -- switches to start after 2 iterations
                           if (not is_second) then
                               if (data_bit = '0') then
                                 sig_is_frame_ok <= false;

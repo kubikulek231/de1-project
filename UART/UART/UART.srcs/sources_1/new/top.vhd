@@ -15,6 +15,8 @@ entity top is
            BTNC      : in std_logic;
            BTNU      : in std_logic;
            BTND      : in std_logic;
+           BTNL      : in std_logic;
+           BTNR      : in std_logic;
            -- serial in
            J_IN      : in std_logic; -- JA
            -- serial out
@@ -36,6 +38,7 @@ end top;
 ----------------------------------------------------------
 
 architecture behavioral of top is
+  -- dataframe signal
   signal sig_data_frame : std_logic_vector (15 downto 7);
   -- variable clock signal
   signal sig_clk       : std_logic;
@@ -64,6 +67,21 @@ architecture behavioral of top is
     return target_digit;
   end function;
 
+  -- used to tell how many digits in number
+  function count_digits(num : natural) return natural is
+    variable digits : natural range 0 to 9 := 0;
+    variable temp_num : natural := num;
+  begin
+    loop 
+      temp_num := temp_num/10;
+      digits := digits + 1;
+      if temp_num = 0 then
+        exit;
+      end if;
+    end loop;
+    return digits;
+  end function;
+  
 begin
 
 
@@ -143,8 +161,10 @@ begin
       seg(0)   => CG
   );
   
+  -- process for driving segmented displays
   p_display_driver : process (CLK100MHZ)
-    variable i : integer := 0;
+    variable i      : integer := 0;
+    variable digits : integer := count_digits(sig_baudrate);
   begin
     if rising_edge(CLK100MHZ) then
       i := i + 1;
@@ -184,16 +204,32 @@ begin
               -- display first 4 numbers from baudrate
               when 50000 =>
                 an  <= "11110111";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 4), 4));
+                if (digits >= 4) then
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 4), 4));
+                else
+                  sig_hex <= "0000";
+                end if;
               when 60000 =>
                 an  <= "11111011";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 3), 4));
+                if (digits >= 3) then
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 3), 4));
+                else
+                  sig_hex <= "0000";
+                end if;
               when 70000 =>
                 an  <= "11111101";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 2), 4));
+                if (digits >= 2) then
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 2), 4));
+                else
+                  sig_hex <= "0000";
+                end if;
               when 80000 =>
                 an  <= "11111110";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 1), 4));
+                if (digits >= 1) then
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 1), 4));
+                else
+                  sig_hex <= "0000";
+                end if;
                 i := 0;
               when others =>
               -- do nothing
@@ -201,47 +237,50 @@ begin
     end if;
   end process p_display_driver;
   
-  p_set_dframe_len : process (CLK100MHZ) is
-  begin
-
-      if SW(0) = '0' then
-        sig_tx_en    <= '1';
-        sig_rx_en    <= '0';
-        -- [DRC MDRV-1] Multiple Driver Nets: Net receiver/UNCONN_OUT[0] has multiple drivers: receiver/data_frame_reg[0]/Q, and sig_data_frame_reg[7]/Q.
-        -- sig_data_frame   <= SW (15 downto 7);
-      else 
-        sig_tx_en <= '0';
-        sig_rx_en <= '1';
-      end if;
-      LED(6 downto 0) <= SW(6 downto 0);
-      LED (15 downto 7) <= sig_data_frame;
-      
-      if (rising_edge(CLK100MHZ)) then
-          if (SW (6 downto 4) > "100") then
-            sig_dframe_l <= "1001";
-          end if;
-          if (SW (6 downto 4) <= "100") then
-            sig_dframe_l <= "0101" + unsigned(SW (6 downto 4));
-          end if;
-      end if;
-  end process p_set_dframe_len;
   
-  p_set_badrate : process (CLK100MHZ) is
+  -- process for getting and controling the user input and indicators
+  p_settings : process (CLK100MHZ) is
     variable i : integer := 0;
   begin
   if rising_edge(CLK100MHZ) then
+      -- button press sense iterator
       i := i + 1;
-      if (i = 50000000) then
+      -- dataframe len settings
+      if (SW (6 downto 4) > "100") then
+          sig_dframe_l <= "1001";
+      end if;
+      if (SW (6 downto 4) <= "100") then
+          sig_dframe_l <= "0101" + unsigned(SW (6 downto 4));
+      end if;
+      -- update led indicators
+      LED (6 downto 0) <= SW(6 downto 0);
+      LED (15 downto 7) <= sig_data_frame;
+      -- baudrate button input
+      if (i = 25000000) then
           if (BTND = '1') then
-            sig_baudrate <= sig_baudrate - 100;
+            if sig_baudrate - 100 >= 100 then
+              sig_baudrate <= sig_baudrate - 100;
+            end if;
           end if;
           if (BTNU = '1') then
-            sig_baudrate <= sig_baudrate + 100;
+            if sig_baudrate + 100 <= 115200 then
+              sig_baudrate <= sig_baudrate + 100;
+            end if;
+          end if;
+          if (BTNL = '1') then
+            if sig_baudrate - 1000 >= 100 then
+              sig_baudrate <= sig_baudrate - 1000;
+            end if;
+          end if;
+          if (BTNR = '1') then
+            if sig_baudrate + 1000 <= 115200 then
+              sig_baudrate <= sig_baudrate + 1000;
+            end if;
           end if;
           i := 0;
           sig_baudrate_cycles <= 100000000/sig_baudrate;    
       end if;
   end if;
-  end process p_set_badrate;
+  end process p_settings;
   
 end architecture behavioral;
