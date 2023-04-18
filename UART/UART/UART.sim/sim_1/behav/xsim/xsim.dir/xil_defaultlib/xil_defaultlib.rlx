@@ -2,11 +2,11 @@
 2020.2
 Nov 18 2020
 09:47:47
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd,1681657553,vhdl,,,,tb_receiver,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_top.vhd,1681669114,vhdl,,,,tb_top,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd,1681658188,vhdl,,,,tb_transmitter,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd,1681484045,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,clock_enable,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd,1681484045,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd;C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,,,cnt_up_down,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd,1681663189,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,receiver,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,1681668736,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_top.vhd,,,top,,,,,,,,
-C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,1681662495,vhdl,C:/Users/Administrator/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,transmitter,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_top.vhd,1681824584,vhdl,,,,tb_top,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd,1681815733,vhdl,,,,tb_transmitter,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd,1679399381,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,clock_enable,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd,1680612261,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd;C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,,,cnt_up_down,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/hex_7seg.vhd,1681815733,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,hex_7seg,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/receiver.vhd,1681815733,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,receiver,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,1681823967,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sim_1/new/tb_top.vhd,,,top,,,,,,,,
+C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/transmitter.vhd,1681815733,vhdl,C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/top.vhd,,,transmitter,,,,,,,,

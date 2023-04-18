@@ -13,7 +13,7 @@ architecture Behavioral of tb_top is
   -- clock signal
   signal CLK100MHZ    : std_logic                                     := '0';
   -- settings/data in                                                  -- dddddddddnnnppsm
-  signal SW           : std_logic_vector (15 downto 0)                := "0111001010001000";
+  signal SW           : std_logic_vector (15 downto 0)                := "1111111110000000";
   -- data in/out display
   signal LED          : std_logic_vector (15 downto 0)                := (others => '0');
   -- reset
@@ -61,13 +61,13 @@ begin
   begin
     
     -- start out transmitting
-    sw <= "0111001010001000";
+    sw <= "1111111110000000";
     wait for 500 ns;
     -- switch to receiving
-    sw <= "0111001010001001";
+    sw <= "1111111110000000";
     wait for 500 ns;
     -- switch back to transmitting
-    sw <= "0111001010001000";
+    sw <= "1111111110000000";
 
   end process p_sw_gen;
   
