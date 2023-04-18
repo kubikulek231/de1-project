@@ -48,9 +48,8 @@ architecture behavioral of top is
   -- data frame length signal
   signal sig_dframe_l  : unsigned(3 downto 0);
   -- clock enable g_max variable 
-  shared variable var_baudrate  : natural := 9600;    
-  shared variable var_baudrate_cycles  : natural := 10416;    
-  
+  signal sig_baudrate  : natural := 9600;    
+  signal sig_baudrate_cycles  : natural := 10416;    
   -- display input hex signal   
   signal sig_hex       : std_logic_vector(3 downto 0) := "0000";
   -- display output seg signal
@@ -72,11 +71,8 @@ begin
   -- Instance of clock_enable entity
   --------------------------------------------------------
   clk_en : entity work.clock_enable
-      generic map(
-          -- calculate number of ticks needed for given baudrate
-          g_MAX => var_baudrate_cycles
-      )
       port map(
+          max => sig_baudrate_cycles,
           clk => CLK100MHZ,
           rst => '0',
           ce  => sig_clk
@@ -188,16 +184,16 @@ begin
               -- display first 4 numbers from baudrate
               when 50000 =>
                 an  <= "11110111";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 4), 4));
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 4), 4));
               when 60000 =>
                 an  <= "11111011";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 3), 4));
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 3), 4));
               when 70000 =>
                 an  <= "11111101";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 2), 4));
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 2), 4));
               when 80000 =>
                 an  <= "11111110";
-                sig_hex <= std_logic_vector(to_unsigned(extract_digit(var_baudrate, 1), 4));
+                sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 1), 4));
                 i := 0;
               when others =>
               -- do nothing
@@ -207,13 +203,7 @@ begin
   
   p_set_dframe_len : process (CLK100MHZ) is
   begin
-      if (BTND = '1') then
-      var_baudrate := var_baudrate - 100;
-      end if;
-      if (BTNU = '1') then
-      var_baudrate := var_baudrate + 100;
-      end if;
-      
+
       if SW(0) = '0' then
         sig_tx_en    <= '1';
         sig_rx_en    <= '0';
@@ -243,13 +233,13 @@ begin
       i := i + 1;
       if (i = 50000000) then
           if (BTND = '1') then
-            var_baudrate := var_baudrate - 100;
+            sig_baudrate <= sig_baudrate - 100;
           end if;
           if (BTNU = '1') then
-            var_baudrate := var_baudrate + 100;
+            sig_baudrate <= sig_baudrate + 100;
           end if;
           i := 0;
-          var_baudrate_cycles := 100000000/var_baudrate;    
+          sig_baudrate_cycles <= 100000000/sig_baudrate;    
       end if;
   end if;
   end process p_set_badrate;
