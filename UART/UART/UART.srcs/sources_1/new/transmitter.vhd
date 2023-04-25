@@ -48,11 +48,16 @@ architecture Behavioral of transmitter is
   shared variable is_second : boolean := false;
 
   -- function to check if the number of '1's in a std_logic_vector is odd
-  function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0)) return boolean is
+  function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0); len : unsigned(3 downto 0)) return boolean is
     variable temp_count : unsigned(3 downto 0)  := (others => '0');
     variable temp_odd   : boolean := true;
   begin
-    for i in s'range loop
+    -- iterate from LSB to MSB
+    for i in 0 to s'length-1 loop
+      -- if data length is reached, break the loop
+      if i = len then
+        exit;
+      end if;
       if s(i) = '1' then 
         temp_count := temp_count + 1; 
       end if;
@@ -121,7 +126,7 @@ architecture Behavioral of transmitter is
                   -- if odd parity is selected
                   if (parity_odd = '1') then
                       -- if the number of '1's in the data frame is odd, the parity bit is 0 and otherwise
-                      if (is_odd(data_frame)) then
+                      if (is_odd(data_frame, data_frame_len)) then
                           serialised_bit <= '0';
                       else
                           serialised_bit <= '1';
@@ -129,7 +134,7 @@ architecture Behavioral of transmitter is
                   -- if even parity is selected
                   else
                       -- if the number of '1's in the data frame is odd, the parity bit is 1 and otherwise
-                      if (is_odd(data_frame)) then
+                      if (is_odd(data_frame, data_frame_len)) then
                           serialised_bit <= '1';
                       else
                           serialised_bit <= '0';

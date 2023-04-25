@@ -16,7 +16,7 @@ architecture Behavioral of tb_transmitter is
   signal sig_serialised_bit    : std_logic;
   -- inputs
   signal sig_clk_100mhz        : std_logic                                     := '0';
-  signal sig_data_frame        : std_logic_vector (c_DATA_WIDTH - 1 downto 0)  := "111101101";
+  signal sig_data_frame        : std_logic_vector (c_DATA_WIDTH - 1 downto 0)  := "000101110";
   signal sig_rst               : std_logic                                     := '0';
   signal sig_en                : std_logic                                     := '1';
   signal sig_cnt_up            : std_logic                                     := '1';
@@ -62,10 +62,10 @@ begin
 
   end process p_clk_gen;
   
-    --------------------------------------------------------
+  --------------------------------------------------------
   -- Reset generation process
   --------------------------------------------------------
-    p_reset_gen : process is
+  p_reset_gen : process is
   begin
 
     sig_rst <= '0';

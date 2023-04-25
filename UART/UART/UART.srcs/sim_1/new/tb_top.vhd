@@ -13,7 +13,7 @@ architecture Behavioral of tb_top is
   -- clock signal
   signal CLK100MHZ    : std_logic                                     := '0';
   -- settings/data in                                                  -- dddddddddnnnppsm
-  signal SW           : std_logic_vector (15 downto 0)                := "1111111110000000";
+  signal SW           : std_logic_vector (15 downto 0)                := "1111111110001100";
   -- data in/out display
   signal LED          : std_logic_vector (15 downto 0)                := (others => '0');
   -- reset
@@ -32,6 +32,10 @@ begin
       SW                 => SW,
       LED                => LED,
       BTNC               => BTNC,
+      BTNU               => '0',
+      BTND               => '0',
+      BTNL               => '0',
+      BTNR               => '0',
       J_IN               => J_IN,
       J_OUT              => J_OUT
     );
@@ -61,13 +65,13 @@ begin
   begin
     
     -- start out transmitting
-    sw <= "1111111110000000";
+    sw <= "0000001110001100";
     wait for 500 ns;
     -- switch to receiving
-    sw <= "1111111110000000";
+    sw <= "0001001110001101";
     wait for 500 ns;
     -- switch back to transmitting
-    sw <= "1111111110000000";
+    sw <= "0000001110001100";
 
   end process p_sw_gen;
   
@@ -79,9 +83,9 @@ begin
 
     report "Stimulus process started";
     loop
-        -- pull high - idle state
+        -- idle to sync
         J_IN  <= '1';
-        wait for 10ns;
+        wait for 40ns;
         -- pull low - start bit
         J_IN  <= '0';
         wait for 10ns;
@@ -97,7 +101,7 @@ begin
         J_IN  <= '1';
         wait for 10ns;
         -- parity bit (odd)
-        J_IN  <= '1';
+        J_IN  <= '0';
         wait for 10ns;
         -- stop bit (two)
         J_IN  <= '1';

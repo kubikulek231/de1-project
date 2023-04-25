@@ -27,7 +27,7 @@ architecture Behavioral of tb_receiver is
   
 begin
 
-  uut_deserialiser : entity work.receiver
+  uut_receiver : entity work.receiver
     generic map (
       g_CNT_WIDTH  => c_CNT_WIDTH,
       g_DATA_WIDTH => c_DATA_WIDTH
@@ -39,10 +39,10 @@ begin
       data_frame_len     => sig_data_frame_len,
       data_bit           => sig_data_bit,
       en                 => sig_en,
-      rst                => '1',
+      rst                => '0',
       stop_one_bit       => '0',
       parity_bit         => '1',
-      parity_odd         => '1',
+      parity_odd         => '0',
       is_data_ok         => sig_is_ok,
       is_finished        => sig_is_finished,
       received_bit       => sig_received_bit
@@ -54,7 +54,7 @@ begin
   p_clk_gen : process is
   begin
 
-    while now < 800 ns loop            
+    while now < 1500 ns loop            
 
       sig_clk_100mhz <= '0';
       wait for c_CLK_100MHZ_PERIOD / 2;
@@ -106,28 +106,30 @@ begin
   --------------------------------------------------------
   p_stimulus : process is
   begin
-    --"111101101";
+    --"1111111110001101";
     report "Stimulus process started";
     loop
-        sig_data_bit <= '1';
+        -- pull low - start bit
+        sig_data_bit  <= '0';
         wait for 10ns;
-        sig_data_bit <= '1';
+        -- transmitted data frame (5 bits)
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '0';
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '1';
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '0';
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '0';
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '1';
+        -- parity bit (odd)
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '1';
+        -- stop bit (two)
+        sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit <= '1';
-        wait for 10ns;
-        sig_data_bit <= '1';
+        sig_data_bit  <= '1';
         wait for 10ns;
     end loop;
     report "Stimulus process finished";

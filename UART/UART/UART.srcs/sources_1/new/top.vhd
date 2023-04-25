@@ -10,7 +10,7 @@ entity top is
            -- settings/data in
            SW        : in std_logic_vector (15 downto 0);
            -- data in/out display
-           LED       : out std_logic_vector (15 downto 0);
+           LED       : out std_logic_vector (15 downto 0) := (others => '0');
            -- reset
            BTNC      : in std_logic;
            BTNU      : in std_logic;
@@ -39,26 +39,29 @@ end top;
 
 architecture behavioral of top is
   -- dataframe signal
-  signal sig_data_frame : std_logic_vector (15 downto 7);
+  signal sig_data_frame  : std_logic_vector (15 downto 7);
   -- variable clock signal
-  signal sig_clk       : std_logic;
+  signal sig_clk         : std_logic;
   -- enable signals   
-  signal sig_tx_en     : std_logic;
-  signal sig_rx_en     : std_logic;
+  signal sig_tx_en       : std_logic;
+  signal sig_rx_en       : std_logic;
   -- reset signals
-  signal sig_tx_rs     : std_logic;
-  signal sig_rx_rs     : std_logic;
+  signal sig_tx_rs       : std_logic;
+  signal sig_rx_rs       : std_logic;
   -- data frame length signal
-  signal sig_dframe_l  : unsigned(3 downto 0);
+  signal sig_dframe_l    : unsigned(3 downto 0);
   -- clock enable g_max variable 
-  signal sig_baudrate  : natural := 9600;    
+  signal sig_baudrate    : natural := 9600;    
   signal sig_baudrate_cycles  : natural := 10416;    
   -- display input hex signal   
-  signal sig_hex       : std_logic_vector(3 downto 0) := "0000";
+  signal sig_hex         : std_logic_vector(3 downto 0) := "0000";
   -- display output seg signal
-  signal sig_seg       : std_logic_vector(6 downto 0) := "1111111";
+  signal sig_seg         : std_logic_vector(6 downto 0) := "1111111";
+  -- received data verification signals
+  signal sig_is_data_ok  : boolean := false;
+  signal sig_is_received : boolean := false;
 
-  -- used for extracting first digit of number
+  -- used for extracting digit of the number
   function extract_digit(num : natural; digit : natural) return natural is
     variable target_digit : natural range 0 to 9;
   begin
@@ -75,11 +78,9 @@ architecture behavioral of top is
     loop 
       temp_num := temp_num/10;
       digits := digits + 1;
-      if temp_num = 0 then
         exit;
-      end if;
     end loop;
-    return digits;
+    return 4;
   end function;
   
 begin
@@ -107,7 +108,7 @@ begin
       port map(
             -- in
             en             => sig_tx_en,
-            clk            => sig_clk,
+            clk            => sig_clk, -- change to sig_clk before implementing!!!
             rst            => sig_tx_rs,
             data_frame_len => sig_dframe_l,
             parity_bit     => SW (3),
@@ -131,12 +132,15 @@ begin
       port map(
             -- in
             en             => sig_rx_en,
-            clk            => sig_clk,
+            clk            => sig_clk, -- change to sig_clk before implementing!!!
             rst            => sig_rx_rs,
             data_frame_len => sig_dframe_l,
             parity_bit     => SW (3),
             parity_odd     => SW (2),
             stop_one_bit   => SW (1),
+            
+            is_data_ok     => sig_is_data_ok,
+            is_finished    => sig_is_received,
             
             -- data out
             data_frame     => sig_data_frame,
@@ -245,6 +249,27 @@ begin
   if rising_edge(CLK100MHZ) then
       -- button press sense iterator
       i := i + 1;
+      -- switch to transmitter
+      if (SW(0) = '0') then
+        sig_tx_en <= '1';
+        sig_tx_rs <= '0';
+        sig_tx_en <= '1';
+        sig_rx_rs <= '0';
+      -- switch to receiver
+      else
+        sig_tx_en <= '0';
+        sig_tx_rs <= '1';
+        sig_rx_en <= '1';
+        sig_rx_rs <= '0';
+      end if;
+      -- reset when BTNC pressed
+      if BTNC = '1' then
+        sig_tx_rs <= '1';
+        sig_rx_rs <= '1';
+      else 
+        sig_tx_rs <= '0';
+        sig_rx_rs <= '0';
+      end if;
       -- dataframe len settings
       if (SW (6 downto 4) > "100") then
           sig_dframe_l <= "1001";
@@ -252,9 +277,15 @@ begin
       if (SW (6 downto 4) <= "100") then
           sig_dframe_l <= "0101" + unsigned(SW (6 downto 4));
       end if;
-      -- update led indicators
+      -- update led indicators - settings
       LED (6 downto 0) <= SW(6 downto 0);
-      LED (15 downto 7) <= sig_data_frame;
+      -- update led indicators - received data
+      if (sig_is_received) then
+        -- display data only when either parity is disabled or parity is ok
+        if (sig_is_data_ok or SW (3) = '0') then
+          LED (15 downto 7) <= sig_data_frame;
+        end if;
+      end if;
       -- baudrate button input
       if (i = 25000000) then
           if (BTND = '1') then

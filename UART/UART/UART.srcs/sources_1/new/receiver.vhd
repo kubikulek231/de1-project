@@ -53,18 +53,20 @@ architecture Behavioral of receiver is
   -- function to check if the number of '1's in a std_logic_vector is odd
   function is_odd(s : std_logic_vector(g_DATA_WIDTH - 1 downto 0)) return boolean is
    variable temp_count : unsigned(3 downto 0)  := (others => '0');
-   variable temp_odd   : boolean := true;
+   variable temp_odd   : boolean := false;
   begin
+    -- iterate for length of vector s
     for i in s'range loop
+      -- increment 1 if symbol is 1
       if s(i) = '1' then 
         temp_count := temp_count + 1; 
       end if;
     end loop;
     
-    if temp_count(0) = '0' then 
-        temp_odd := false;
+    if temp_count(0) = '1' then 
+        temp_odd := true;
     end if;
-      
+    
     return temp_odd;
   end function is_odd;
     
@@ -131,16 +133,16 @@ architecture Behavioral of receiver is
                     sig_rst <= '1';
                       -- if odd parity
                       if (parity_odd = '1') then
-                      -- if number of 1s in the data frame is odd, parity bit is 0 and otherwise
-                        if (is_odd(sig_data_frame) and data_bit = '1') then
+                      -- if number of 1s in the data frame and parity bit is odd, data is ok
+                        if ((is_odd(sig_data_frame) and data_bit = '0') or (not is_odd(sig_data_frame) and data_bit = '1')) then
                             is_data_ok <= true;
                         else
                             is_data_ok <= false;
                         end if;
                       -- if even parity
                       else
-                      -- if number of 1s in the data frame is odd, parity bit is 1 and otherwise
-                        if (is_odd(sig_data_frame) and data_bit = '0') then
+                      -- if number of 1s in the data frame and parity bit is even, data is ok
+                        if ((not is_odd(sig_data_frame) and data_bit = '0') or (is_odd(sig_data_frame) and data_bit = '1')) then
                             is_data_ok <= true;
                         else
                             is_data_ok <= false;

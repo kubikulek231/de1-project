@@ -2,23 +2,20 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Apr 18 19:07:50 2023
-# Process ID: 17480
+# Start of session at: Tue Apr 25 20:02:55 2023
+# Process ID: 10740
 # Current directory: C:/Users/Administrator/git/de1-project/UART/UART
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17836 C:\Users\Administrator\git\de1-project\UART\UART\UART.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23828 C:\Users\Administrator\git\de1-project\UART\UART\UART.xpr
 # Log file: C:/Users/Administrator/git/de1-project/UART/UART/vivado.log
 # Journal file: C:/Users/Administrator/git/de1-project/UART/UART\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Administrator/git/de1-project/UART/UART/UART.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/239122/Desktop/de1-project/UART/UART' since last save.
-WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/Administrator/git/de1-project/UART/UART/UART.gen/sources_1', nor could it be found using path 'C:/Users/239122/Desktop/de1-project/UART/UART/UART.gen/sources_1'.
-CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd', nor could it be found using path 'C:/Users/239122/Desktop/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Administrator/git/de1-project/UART/UART/UART.gen/sources_1'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Administrator/git/de1-project/UART/UART/UART.srcs/sources_1/new/serialiser.vhd'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
-exit
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 18 21:34:18 2023...
