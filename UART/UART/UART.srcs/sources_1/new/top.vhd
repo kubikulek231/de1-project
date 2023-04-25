@@ -75,12 +75,24 @@ architecture behavioral of top is
     variable digits : natural range 0 to 9 := 0;
     variable temp_num : natural := num;
   begin
-    loop 
-      temp_num := temp_num/10;
-      digits := digits + 1;
-        exit;
-    end loop;
-    return 4;
+      if temp_num/10 = 0 then 
+        return 1;
+      end if;
+      if temp_num/100 = 0 then 
+        return 2;
+      end if;
+      if temp_num/1000 = 0 then 
+        return 3;
+      end if;
+      if temp_num/10000 = 0 then 
+        return 4;
+      end if;
+      if temp_num/100000 = 0 then 
+        return 5;
+      end if;
+      if temp_num/1000000 = 0 then 
+        return 6;
+      end if;
   end function;
   
 begin
