@@ -93,6 +93,7 @@ architecture behavioral of top is
       if temp_num/1000000 = 0 then 
         return 6;
       end if;
+      return 7;
   end function;
   
 begin

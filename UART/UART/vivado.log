@@ -19,3 +19,32 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Tue Apr 25 20:04:04 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Tue Apr 25 20:07:42 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Tue Apr 25 20:09:46 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Tue Apr 25 20:16:00 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Tue Apr 25 20:17:17 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Tue Apr 25 20:18:29 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Tue Apr 25 20:20:01 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/git/de1-project/UART/UART/UART.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 25 20:21:34 2023...
