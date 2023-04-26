@@ -2,7 +2,7 @@
 *.jou
 *.str
 Xil/
-UART.cache/
-UART.hw/
-UART.ip_user_files/
-UART.sim/
+UART/UART.cache/
+UART/UART.hw/
+UART/UART.ip_user_files/
+UART/UART.sim/
