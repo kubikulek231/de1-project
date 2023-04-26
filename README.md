@@ -1,8 +1,11 @@
 # de1-project
+
+This project is part of the Digital Electronics course (BPC-DE1 22/23L) at Brno University of Technology, Czechia. The course provides an introduction to digital technology and covers topics such as digital circuits and Boolean algebra. In this project, we aim to implement a UART (Universal Asynchronous Receiver-Transmitter) communication protocol using VHDL.
+
 ### Team members
 
-* Josef Caha 1 (responsible for ...)
-* Jakub Lepík 2 (responsible for ...)
+* Josef Caha    (responsible for ...)
+* Jakub Lepík   (responsible for ...)
 
 ## Theoretical description and explanation
 
@@ -12,12 +15,14 @@ The UART interface comprises of two lines, a transmit line (TX) and a receive li
 
 The start bit signals the beginning of a data transmission, and the stop bit(s) signal the end. The start bit is always a logic low (0), and the stop bit(s) is a logic high (1). The data bits are transmitted in order from the least significant bit to the most significant bit. The parity bit is used to check for errors in the data transmission, with its value being set to ensure that the total number of logic high bits transmitted is either odd or even.
 
-##Transmitter
+### Transmitter
 
-converts paralel signal with given configuration settings to serial one, then transmits:
-Start bit, data frame, optional parity bits, end bit
+A transmitter takes a parallel signal with specific configuration settings and converts it into a serial signal. The transmitter then sends the serial signal which includes a start bit, data frame, optional parity bits, and one or two end bits.
 
-configuration: 8N1 - 1start bit, 8 data bits, 0 parity bits, 1 end bit
+### Receiver
+
+To receive data, a receiver takes a serial signal transmitted one bit at a time with specific configuration settings, including a start bit, data frame, optional parity bits, and one or two end bits. The receiver then converts the serial signal into a parallel signal with the original configuration settings, checking for any errors in the received signal using the parity bits (if present), and outputs the resulting parallel signal.
+
 ## Hardware description of demo application
 
 Insert descriptive text and schematic(s) of your implementation.
