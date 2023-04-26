@@ -6,7 +6,11 @@
 
 ## Theoretical description and explanation
 
-https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
+UART (Universal Asynchronous Receiver/Transmitter) is a popular form of serial communication that is used to establish communication between devices. It is a hardware communication protocol used for transmitting data between microcontrollers, sensors, and other devices in a system. 
+It is simple and reliable communication protocol widely used in applications that require low-speed data transfer. 
+The UART interface consists of two lines: a transmit line (TX) and a receive line (RX). The data is transmitted in a serial format over these lines, with each bit transmitted one after the other.
+
+The frame of the UART protocol consists of a start bit, data bits (typically between 5 and 9 bits), an optional parity bit for error checking, and one or more stop bits. The start bit signals the beginning of a data transmission, and the stop bit(s) signal the end.
 
 ##Transmitter
 
