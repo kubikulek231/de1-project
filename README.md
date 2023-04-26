@@ -1,4 +1,4 @@
-# de1-project
+# VHDL UART project
 
 This project is part of the Digital Electronics course (BPC-DE1 22/23L) at Brno University of Technology, Czechia. The course provides an introduction to digital technology and covers topics such as digital circuits and Boolean algebra. In this project, we aim to implement a UART (Universal Asynchronous Receiver-Transmitter) communication protocol using VHDL.
 
@@ -41,5 +41,4 @@ Write an instruction manual for your application, including photos or a link to 
 
 ## References
 
-1. Put here the literature references you used.
-2. ...
+https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
