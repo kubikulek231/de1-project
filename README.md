@@ -6,11 +6,11 @@
 
 ## Theoretical description and explanation
 
-UART (Universal Asynchronous Receiver/Transmitter) is a popular form of serial communication that is used to establish communication between devices. It is a hardware communication protocol used for transmitting data between microcontrollers, sensors, and other devices in a system. 
-It is simple and reliable communication protocol widely used in applications that require low-speed data transfer. 
-The UART interface consists of two lines: a transmit line (TX) and a receive line (RX). The data is transmitted in a serial format over these lines, with each bit transmitted one after the other.
+UART is a hardware communication protocol that is widely used to establish communication between devices. It is a simple and reliable communication protocol used in applications that require low-speed data transfer. The protocol is commonly used for transmitting data between microcontrollers, sensors, and other devices in a system.
 
-The frame of the UART protocol consists of a start bit, data bits (typically between 5 and 9 bits), an optional parity bit for error checking, and one or more stop bits. The start bit signals the beginning of a data transmission, and the stop bit(s) signal the end.
+The UART interface comprises of two lines, a transmit line (TX) and a receive line (RX). The data is transmitted serially over these lines, with each bit transmitted one after the other. The frame of the UART protocol consists of a start bit, data bits, an optional parity bit, and one or more stop bits. Typically, there are between 5 and 9 data bits, with the parity bit used for error checking.
+
+The start bit signals the beginning of a data transmission, and the stop bit(s) signal the end. The start bit is always a logic low (0), and the stop bit(s) is a logic high (1). The data bits are transmitted in order from the least significant bit to the most significant bit. The parity bit is used to check for errors in the data transmission, with its value being set to ensure that the total number of logic high bits transmitted is either odd or even.
 
 ##Transmitter
 
