@@ -222,28 +222,28 @@ begin
               when 50000 =>
                 an  <= "11110111";
                 if (digits >= 4) then
-                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 4), 4));
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 4), 4));
                 else
                   sig_hex <= "0000";
                 end if;
               when 60000 =>
                 an  <= "11111011";
                 if (digits >= 3) then
-                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 3), 4));
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 3), 4));
                 else
                   sig_hex <= "0000";
                 end if;
               when 70000 =>
                 an  <= "11111101";
                 if (digits >= 2) then
-                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 2), 4));
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 2), 4));
                 else
                   sig_hex <= "0000";
                 end if;
               when 80000 =>
                 an  <= "11111110";
                 if (digits >= 1) then
-                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate, 1), 4));
+                  sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 1), 4));
                 else
                   sig_hex <= "0000";
                 end if;
