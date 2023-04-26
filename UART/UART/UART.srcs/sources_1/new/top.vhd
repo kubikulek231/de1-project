@@ -266,8 +266,8 @@ begin
       if (SW(0) = '0') then
         sig_tx_en <= '1';
         sig_tx_rs <= '0';
-        sig_tx_en <= '1';
-        sig_rx_rs <= '0';
+        sig_rx_en <= '0';
+        sig_rx_rs <= '1';
       -- switch to receiver
       else
         sig_tx_en <= '0';
