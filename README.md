@@ -47,4 +47,6 @@ Write an instruction manual for your application, including photos or a link to 
 
 ## References
 
-https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
+- https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
+- https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual
+- https://digilent.com/reference/_media/programmable-logic/nexys-a7/nexys-a7-d3-sch.pdf
