@@ -28,10 +28,14 @@ To receive data, a receiver takes a serial signal transmitted one bit at a time 
 The demo application is implemented on a Nexys A7 development board with the following hardware components:
 
 - 15 switches: These switches are used to set the data frame and its parameters. Nine switches are used to set the data frame, three switches are used to set the data frame length, one switch is used to enable or disable parity, one switch is used to select parity odd/even, one switch is used to select one or two stop bits, and one switch is used to switch between TX and RX mode.
-- 8 digit seven-segment display: This display is used to show the data being transmitted or received.
-- 15 LED indicators: These LEDs are used to indicate the state of the UART communication.
-- BTNC, BTNL, BTNR, BTNU, BTND buttons: These buttons are used to control the demo application.
-- Pmod connector: This connector can be used to connect other peripherals or devices to the board. Only two pins (RX and TX) are used from the PMOD connector.
+- 8 digit seven-segment display: It includes one digit for indicating whether it's in transmitter or receiver mode, one digit for data frame length, one digit for stop bit configuration, one digit for parity configuration, and the last four digits display the currently set baud rate.
+- The 15 LED indicators: The first nine LEDs are used to display the received data frame when parity is set to none or when the data is safely received. When the bit in the corresponding position is 1, the LED is on, and when it is 0, the LED is off.
+- BTNC, BTNL, BTNR, BTNU, BTND buttons: These buttons are used to set the baudrate and BTNC to reset the aplication.
+- Pmod connector: Only two pins (RX and TX) from the PMOD connector are used to enable communication between the board and external devices. The RX pin is used to receive data, while the TX pin is used to transmit data.
+
+![schematic](images/schematic.png "Schematic")
+
+> Schematic of the used hardware parts of the Nexys A7 board from [Reference manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
 
 ## Software description
 
@@ -43,7 +47,32 @@ Write descriptive text and simulation screenshots of your components.
 
 ## Instructions
 
-Write an instruction manual for your application, including photos or a link to a video.
+#### Videos
+The video demonstrates the use of the 15 switches to configure the data frame and its parameters. It shows how to set the data frame, data frame length, enable/disable parity, select parity odd/even, configure one or two stop bits, and switch between TX and RX modes. The video showcases the seamless switching on and off of these settings and provides a comprehensive overview of the process of setting up the board for communication.
+- Link: https://www.youtube.com/watch?v=0lwEhEY8TVo
+
+In the second video, I demonstrate how to set up the Nexys board in transmission mode, configure the data frame settings, and set the baudrate. The process is captured using a logic analyzer connected to the Nexys board, and the received signal is displayed on the computer. The video showcases the successful transmission of the data frame set up using the switches on the board, and highlights the detection of errors when the parity is set incorrectly.
+- Link: https://www.youtube.com/watch?v=YKf-yF5lCpU
+
+In the third video, I demonstrate the board in receiving mode. I connected the board to an Arduino, which sends a serial signal based on the keys pressed on a connected keyboard. The video shows the corresponding LED on the board lighting up as I press the keys on the numpad, indicating the received signal.
+- Link: https://www.youtube.com/watch?v=l6r-ZX2BniM
+
+#### Manual
+![Switches](images/switches.png "Switches")
+> The switches are used to set the data frame and its parameters in the UART communication.
+
+![Buttons](images/buttons.png "Buttons")
+> The BTNL, BTNR, BTNU, and BTND buttons are used to set the baudrate and BTNC to reset the application by pressing it.
+
+![Display](images/display.png "Display")
+> The display shows the current status of the UART aplication.
+
+![Leds](images/leds.png "Leds")
+> The LEDs indicate UART communication state. The first 9 show received data when parity is none or data is safely received, with each LED corresponding to a bit, on when 1 and off when 0.
+
+![Serial](images/serial.png "Serial")
+> The RX pin is used to receive data, while the TX pin is used to transmit data.
+
 
 ## References
 
