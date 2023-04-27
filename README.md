@@ -27,9 +27,9 @@ To receive data, a receiver takes a serial signal transmitted one bit at a time 
 
 The demo application is implemented on a Nexys A7 development board with the following hardware components:
 
-- 15 switches (SW15 to 0): These switches are used to set the data frame and its parameters. Nine switches are used to set the data frame, three switches are used to set the data frame length, one switch is used to enable or disable parity, one switch is used to select parity odd/even, one switch is used to select one or two stop bits, and one switch is used to switch between TX and RX mode.
+- 15 switches: These switches are used to set the data frame and its parameters. Nine switches are used to set the data frame, three switches are used to set the data frame length, one switch is used to enable or disable parity, one switch is used to select parity odd/even, one switch is used to select one or two stop bits, and one switch is used to switch between TX and RX mode.
 - 8 digit seven-segment display: This display is used to show the data being transmitted or received.
-- 15 LED indicators (LD15 to 0): These LEDs are used to indicate the state of the UART communication.
+- 15 LED indicators: These LEDs are used to indicate the state of the UART communication.
 - BTNC, BTNL, BTNR, BTNU, BTND buttons: These buttons are used to control the demo application.
 - Pmod connector: This connector can be used to connect other peripherals or devices to the board. Only two pins (RX and TX) are used from the PMOD connector.
 
