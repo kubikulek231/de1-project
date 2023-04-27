@@ -39,6 +39,14 @@ The demo application is implemented on a Nexys A7 development board with the fol
 
 ## Software description
 
+The receiver module converts serial data to a vector using a clock signal and handles different UART frame settings. It uses an up-down counter to sync with incoming data and verifies data integrity by checking if the number of '1's in the dataframe is odd/even.
+
+The transmitter module serializes data by outputting a start bit and bit-by-bit with the clock signal. It handles various UART frame settings and adds parity bits based on user settings, and outputs one or two stop bits. It also uses an up-down counter to sync with incoming data.
+
+The top entity serves as the user interface for the UART system and connects with the receiver and transmitter modules. It allows the user to set up the UART frame and parity settings via switches and buttons, sends out data from transmitter mode and displayes the received incoming data on LED indicators.
+
+
+
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
 
 ### Component(s) simulation
