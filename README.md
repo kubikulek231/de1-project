@@ -71,13 +71,13 @@ You can check the [**top-structure simulation** code here.](https://github.com/k
 ## Instructions
 
 #### Videos
-The video demonstrates the use of the 15 switches to configure the data frame and its parameters. It shows how to set the data frame, data frame length, enable/disable parity, select parity odd/even, configure one or two stop bits, and switch between TX and RX modes. The video showcases the seamless switching on and off of these settings and provides a comprehensive overview of the process of setting up the board for communication.
+The first video showcases the process of configuring the Nexys board for communication using the 15 switches available on the board. The video demonstrates how to set up various parameters such as the data frame, data frame length, parity, stop bits, and switching between transmission and reception modes. It provides a comprehensive overview of the process, highlighting the seamless switching on and off of these settings.
 - Link: https://www.youtube.com/watch?v=0lwEhEY8TVo
 
-In the second video, I demonstrate how to set up the Nexys board in transmission mode, configure the data frame settings, and set the baudrate. The process is captured using a logic analyzer connected to the Nexys board, and the received signal is displayed on the computer. The video showcases the successful transmission of the data frame set up using the switches on the board, and highlights the detection of errors when the parity is set incorrectly.
+In the second video, the process of setting up the Nexys board for transmission mode is demonstrated. The video captures the process using a logic analyzer connected to the Nexys board, with the received signal displayed on a computer. The successful transmission of the configured data frame using the switches on the board is showcased, along with the detection of errors that occur when the parity is set incorrectly.
 - Link: https://www.youtube.com/watch?v=YKf-yF5lCpU
 
-In the third video, I demonstrate the board in receiving mode. I connected the board to an Arduino, which sends a serial signal based on the keys pressed on a connected keyboard. The video shows the corresponding LED on the board lighting up as I press the keys on the numpad, indicating the received signal.
+In the third video, the board is demonstrated in receiving mode, with the board connected to an Arduino. The Arduino sends a serial signal based on the keys pressed on a connected keyboard, which is received by the Nexys board. The video shows the corresponding LED on the board lighting up as the keys on the numpad are pressed, indicating the received signal.
 - Link: https://www.youtube.com/watch?v=l6r-ZX2BniM
 
 #### Manual
