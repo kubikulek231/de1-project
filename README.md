@@ -39,7 +39,7 @@ To receive data, a receiver takes a serial signal transmitted one bit at a time 
 
 ## Hardware description of demo application
 
-The demo application is implemented on a Nexys A7 development board with the following hardware components that act as user interface:
+The demo application is implemented on a Nexys A7 development board with the following hardware components:
 
 - 15 switches: These switches are used to set the data frame and its parameters. Nine switches are used to set the data frame, three switches are used to set the data frame length, one switch is used to enable or disable parity, one switch is used to select parity odd/even, one switch is used to select one or two stop bits, and one switch is used to switch between TX and RX mode.
 - 8 digit seven-segment display: It includes one digit for indicating whether it's in transmitter or receiver mode, one digit for data frame length, one digit for stop bit configuration, one digit for parity configuration, and the last four digits display the currently set baud rate.
