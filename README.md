@@ -62,8 +62,8 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulation
 
-You can check the [reciever **simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)
-You can check the [transmitter **simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)
+You can check the [reciever **simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)  
+You can check the [transmitter **simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)  
 You can check the [top-structure **simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd)
 
 Write descriptive text and simulation screenshots of your components.
@@ -74,10 +74,10 @@ Write descriptive text and simulation screenshots of your components.
 The video demonstrates the use of the 15 switches to configure the data frame and its parameters. It shows how to set the data frame, data frame length, enable/disable parity, select parity odd/even, configure one or two stop bits, and switch between TX and RX modes. The video showcases the seamless switching on and off of these settings and provides a comprehensive overview of the process of setting up the board for communication.
 - Link: https://www.youtube.com/watch?v=0lwEhEY8TVo
 
-In the second video, the demonstration shows how to set up the Nexys board in transmission mode, configure the data frame settings, and set the baudrate. The process is captured using a logic analyzer connected to the Nexys board, and the received signal is displayed on the computer. The video showcases the successful transmission of the data frame set up using the switches on the board, and highlights the detection of errors when the parity is set incorrectly.
+In the second video, I demonstrate how to set up the Nexys board in transmission mode, configure the data frame settings, and set the baudrate. The process is captured using a logic analyzer connected to the Nexys board, and the received signal is displayed on the computer. The video showcases the successful transmission of the data frame set up using the switches on the board, and highlights the detection of errors when the parity is set incorrectly.
 - Link: https://www.youtube.com/watch?v=YKf-yF5lCpU
 
-In the third video, the board is demonstrated in receiving mode. The board is connected to an Arduino, which sends a serial signal based on the keys pressed on a connected keyboard. The video shows the corresponding LED on the board lighting up as the keys on the numpad are pressed, indicating the received signal.
+In the third video, I demonstrate the board in receiving mode. I connected the board to an Arduino, which sends a serial signal based on the keys pressed on a connected keyboard. The video shows the corresponding LED on the board lighting up as I press the keys on the numpad, indicating the received signal.
 - Link: https://www.youtube.com/watch?v=l6r-ZX2BniM
 
 #### Manual
