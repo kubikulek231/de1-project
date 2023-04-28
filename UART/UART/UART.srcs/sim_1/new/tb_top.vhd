@@ -16,6 +16,10 @@ architecture Behavioral of tb_top is
   signal SW           : std_logic_vector (15 downto 0)                := "1111111110001100";
   -- data in/out display
   signal LED          : std_logic_vector (15 downto 0)                := (others => '0');
+  -- 7 segmented display segments
+  signal SEG          : std_logic_vector (6 downto 0)                 := "1111111";
+  -- 7 segmented display anodes
+  signal AN           : std_logic_vector (7 downto 0)                 := "11111111";
   -- reset
   signal BTNC         : std_logic                                     := '0';
   -- serial in
@@ -32,6 +36,14 @@ begin
       SW                 => SW,
       LED                => LED,
       BTNC               => BTNC,
+      CA                 => SEG(0),
+      CB                 => SEG(1),
+      CC                 => SEG(2),
+      CD                 => SEG(3),
+      CE                 => SEG(4),
+      CF                 => SEG(5),
+      CG                 => SEG(6),
+      AN                 => AN,
       BTNU               => '0',
       BTND               => '0',
       BTNL               => '0',

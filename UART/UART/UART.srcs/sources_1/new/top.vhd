@@ -187,7 +187,7 @@ begin
       i := i + 1;
         case i is
               -- display TX / RX mode
-              when 10000 =>
+              when 1 =>
                 an  <= "01111111";
                 if SW(0) = '0' then
                   sig_hex <= "1010"; -- Tx
@@ -195,11 +195,11 @@ begin
                   sig_hex <= "1011"; -- Rx
                 end if;
               -- display data frame length
-              when 20000 =>
+              when 2 =>
                 an  <= "10111111";
                 sig_hex <= std_logic_vector(sig_dframe_l);
               -- display parity N/O/E
-              when 30000 =>
+              when 3 =>
                 an  <= "11011111";
                 if SW (3) = '1' then
                   if SW (2) = '1' then
@@ -211,7 +211,7 @@ begin
                   sig_hex <= "1100"; -- No
                 end if;
               -- display stop bit/s
-              when 40000 =>
+              when 4 =>
                 an  <= "11101111";
                 if SW (1) = '1' then
                     sig_hex <= "0001"; -- 1
@@ -219,28 +219,28 @@ begin
                     sig_hex <= "0010"; -- 2
                 end if;
               -- display first 4 numbers from baudrate
-              when 50000 =>
+              when 5 =>
                 an  <= "11110111";
                 if (digits >= 4) then
                   sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 4), 4));
                 else
                   sig_hex <= "0000";
                 end if;
-              when 60000 =>
+              when 6 =>
                 an  <= "11111011";
                 if (digits >= 3) then
                   sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 3), 4));
                 else
                   sig_hex <= "0000";
                 end if;
-              when 70000 =>
+              when 7 =>
                 an  <= "11111101";
                 if (digits >= 2) then
                   sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 2), 4));
                 else
                   sig_hex <= "0000";
                 end if;
-              when 80000 =>
+              when 8 =>
                 an  <= "11111110";
                 if (digits >= 1) then
                   sig_hex <= std_logic_vector(to_unsigned(extract_digit(sig_baudrate/100, 1), 4));
