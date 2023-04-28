@@ -31,7 +31,7 @@ The baud rate is an important parameter of UART communication and refers to the 
 
 ### Transmitter
 
-A transmitter takes a parallel signal with specific configuration settings and converts it into a serial signal. The transmitter then sends the serial signal which includes a start bit, data frame, optional parity bits, and one or two end bits.
+The transmitter takes in parallel dataframe and converts it into a serial signal. The transmitted signal is made up of a start bit, data bits, optional parity bits (which need to be calculated considering the number of 1s in the dataframe), and one or two stop bits, and is sent out as a continuous stream of bits one bit after another. It formats and sends the data in a way that can be accurately received and decoded by a corresponding receiver.
 
 ### Receiver
 
