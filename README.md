@@ -50,23 +50,17 @@ The top entity serves as the user interface for the UART system and connects wit
 
 ### Component(s) simulation
 
-Simulated weveforms of **receiver**:  
+Simulated weveforms of *receiver* entity using [tb_receiver](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)  testbench file  
 
-**DOPLNIT SIMULACI**
+![Receiver](images/simulation/receiver.png "Receiver")
 
-You can check the [**reciever simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd) 
+Simulated weveforms of *transmitter* entity using [tb_transmitter](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd) testbench file
 
-Simulated weveforms of **transmiter**:
+![Transmitter](images/simulation/transmitter.png "Transmitter")
 
-**DOPLNIT SIMULACI**
+Simulated weveforms of *top* entity using [tb_top](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd) testbench file
 
-You can check the [**transmitter simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)
-
-Simulated weveforms of **top-structure**:  
-
-**DOPLNIT SIMULACI**
-
-You can check the [**top-structure simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd)
+![Top](images/simulation/top.png "Top")
 
 ## Instructions
 
