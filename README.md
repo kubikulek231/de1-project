@@ -48,16 +48,25 @@ The transmitter module serializes data by outputting a start bit and bit-by-bit 
 **TOP**  
 The top entity serves as the user interface for the UART system and connects with the receiver and transmitter modules. It allows the user to set up the UART frame and parity settings via switches and buttons, sends out data from transmitter mode and displayes the received incoming data on LED indicators.  You can check the [top-structure code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/top.vhd)
 
-
-Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
-
 ### Component(s) simulation
 
-You can check the [**reciever simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)  
-You can check the [**transmitter simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)  
-You can check the [**top-structure simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd)
+Simulated weveforms of **receiver**:  
 
-Write descriptive text and simulation screenshots of your components.
+**DOPLNIT SIMULACI**
+
+You can check the [**reciever simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd) 
+
+Simulated weveforms of **transmiter**:
+
+**DOPLNIT SIMULACI**
+
+You can check the [**transmitter simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)
+
+Simulated weveforms of **top-structure**:  
+
+**DOPLNIT SIMULACI**
+
+You can check the [**top-structure simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd)
 
 ## Instructions
 
