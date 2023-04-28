@@ -109,3 +109,4 @@ In the third video, the board is demonstrated in receiving mode, with the board 
 - https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
 - https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual
 - https://digilent.com/reference/_media/programmable-logic/nexys-a7/nexys-a7-d3-sch.pdf
+- https://github.com/tomas-fryza/digital-electronics-1
