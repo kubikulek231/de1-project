@@ -121,7 +121,7 @@ begin
       port map(
             -- in
             en             => sig_tx_en,
-            clk            => sig_clk, -- change to sig_clk before implementing!!!
+            clk            => CLK100MHZ, -- change to sig_clk before implementing!!!
             rst            => sig_tx_rs,
             data_frame_len => sig_dframe_l,
             parity_bit     => SW (3),
@@ -145,7 +145,7 @@ begin
       port map(
             -- in
             en             => sig_rx_en,
-            clk            => sig_clk, -- change to sig_clk before implementing!!!
+            clk            => CLK100MHZ, -- change to sig_clk before implementing!!!
             rst            => sig_rx_rs,
             data_frame_len => sig_dframe_l,
             parity_bit     => SW (3),
