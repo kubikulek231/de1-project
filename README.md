@@ -53,19 +53,19 @@ Put flowchats/state diagrams of your algorithm(s) and direct links to source/tes
 
 ### Component(s) simulation
 
-Simulated weveforms of riciever:  
+Simulated weveforms of **receiver**:  
 
 **DOPLNIT SIMULACI**
 
 You can check the [**reciever simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd) 
 
-Simulated weveforms of transmiter:
+Simulated weveforms of **transmiter**:
 
 **DOPLNIT SIMULACI**
 
 You can check the [**transmitter simulation** code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd)
 
-Simulated weveforms of top-structure:  
+Simulated weveforms of **top-structure**:  
 
 **DOPLNIT SIMULACI**
 
