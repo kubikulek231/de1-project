@@ -39,12 +39,17 @@ The demo application is implemented on a Nexys A7 development board with the fol
 
 ## Software description
 
+#Reciever
 The receiver module converts serial data to a vector using a clock signal and handles different UART frame settings. It uses an up-down counter to sync with incoming data and verifies data integrity by checking if the number of '1's in the dataframe is odd/even.
+[You can check the reciever code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/receiver.vhd)
 
+#Transmiter
 The transmitter module serializes data by outputting a start bit and bit-by-bit with the clock signal. It handles various UART frame settings and adds parity bits based on user settings, and outputs one or two stop bits. It also uses an up-down counter to sync with incoming data.
+[You can check the transmitter code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/transmitter.vhd)
 
+#TOP
 The top entity serves as the user interface for the UART system and connects with the receiver and transmitter modules. It allows the user to set up the UART frame and parity settings via switches and buttons, sends out data from transmitter mode and displayes the received incoming data on LED indicators.
-
+[You can check the top-structure code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/top.vhd)
 
 
 Put flowchats/state diagrams of your algorithm(s) and direct links to source/testbench files in `src` and `sim` folders. 
@@ -80,7 +85,6 @@ In the third video, I demonstrate the board in receiving mode. I connected the b
 
 ![Serial](images/serial.png "Serial")
 > The RX pin is used to receive data, while the TX pin is used to transmit data.
-
 
 ## References
 
