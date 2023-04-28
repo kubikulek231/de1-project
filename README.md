@@ -1,6 +1,20 @@
-# VHDL UART project
+# VHDL UART Project
 
 This project is part of the Digital Electronics course (BPC-DE1 22/23L) at Brno University of Technology, Czechia. In this project, we aim to implement a UART (Universal Asynchronous Receiver-Transmitter) communication protocol using VHDL.
+
+### Table of contents
+- [VHDL UART project](#vhdl-uart-project)
+    + [Team members](#team-members)
+  * [Theoretical description and explanation](#theoretical-description-and-explanation)
+    + [Transmitter](#transmitter)
+    + [Receiver](#receiver)
+  * [Hardware description of demo application](#hardware-description-of-demo-application)
+  * [Software description](#software-description)
+    + [Components simulation](#components-simulation)
+  * [Instructions](#instructions)
+      - [Video showcase](#video-showcase)
+      - [Manual](#manual)
+  * [References](#references)
 
 ### Team members
 
@@ -78,15 +92,18 @@ Simulated weveforms of *top* entity using [tb_top](https://github.com/kubikulek2
 
 ## Instructions
 
-#### Videos
-The first video showcases the process of configuring the Nexys board for communication using the 15 switches available on the board. The video demonstrates how to set up various parameters such as the data frame, data frame length, parity, stop bits, and switching between transmission and reception modes. It provides a comprehensive overview of the process, highlighting the seamless switching on and off of these settings.
-- Link: https://www.youtube.com/watch?v=0lwEhEY8TVo
+#### Video showcase
+Configuration
+- The first video showcases the process of configuring the Nexys board for communication using the 15 switches available on the board. The video demonstrates how to set up various parameters such as the data frame, data frame length, parity, stop bits, and switching between transmission and reception modes. It provides a comprehensive overview of the process, highlighting the seamless switching on and off of these settings.
+- [Link to the first video](https://www.youtube.com/watch?v=0lwEhEY8TVo)
 
-In the second video, the process of setting up the Nexys board for transmission mode is demonstrated. The video captures the process using a logic analyzer connected to the Nexys board, with the received signal displayed on a computer. The successful transmission of the configured data frame using the switches on the board is showcased, along with the detection of errors that occur when the parity is set incorrectly.
-- Link: https://www.youtube.com/watch?v=YKf-yF5lCpU
+Transmitter mode
+- In the second video, the process of setting up the Nexys board for transmission mode is demonstrated. The video captures the process using a logic analyzer connected to the Nexys board, with the received signal displayed on a computer. The successful transmission of the configured data frame using the switches on the board is showcased, along with the detection of errors that occur when the parity is set incorrectly.
+- [Link to the second video](https://www.youtube.com/watch?v=YKf-yF5lCpU)
 
-In the third video, the board is demonstrated in receiving mode, with the board connected to an Arduino. The Arduino sends a serial signal based on the keys pressed on a connected keyboard, which is received by the Nexys board. The video shows the corresponding LED on the board lighting up as the keys on the numpad are pressed, indicating the received signal.
-- Link: https://www.youtube.com/watch?v=l6r-ZX2BniM
+Receiver mode
+- In the third video, the board is demonstrated in receiving mode, with the board connected to an Arduino. The Arduino sends a serial signal based on the keys pressed on a connected keyboard, which is received by the Nexys board. The video shows the corresponding LED on the board lighting up as the keys on the numpad are pressed, indicating the received signal.
+- [Link to the third video](https://www.youtube.com/watch?v=l6r-ZX2BniM)
 
 #### Manual
 ![Switches](images/manual/switches.png "Switches")
@@ -99,7 +116,7 @@ In the third video, the board is demonstrated in receiving mode, with the board 
 > The display shows the current status of the UART aplication.
 
 ![Leds](images/manual/leds.png "Leds")
-> The LEDs indicate UART communication state. The first 9 show received data when parity is none or data is safely received, with each LED corresponding to a bit, on when 1 and off when 0.
+> The LEDs indicate UART communication state and received dataframe.
 
 ![Serial](images/manual/serial.png "Serial")
 > The RX pin is used to receive data, while the TX pin is used to transmit data.
