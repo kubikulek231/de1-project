@@ -66,7 +66,7 @@ The VHDL code consists of several entities:
   - The top entity serves as the user interface for the UART system and connects with the receiver and transmitter modules. It allows the user to set up the UART frame and parity settings via switches and buttons, sends out data from transmitter mode and displayes the received incoming data on LED indicators.
   - View the code for [top.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/top.vhd)
 
-- **Other modules**
+- **Other** modules
   - Clock enable, Counter and Hex to Seg converter entities with sligh moddifications. Original modules can be found in DE1 course [repository](https://github.com/tomas-fryza/digital-electronics-1).
   - View the code for [clock_enable.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd), [clock_enable.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd), [hex_7_seg.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/hex_7_seg.vhd)
 
