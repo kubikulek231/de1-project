@@ -12,8 +12,6 @@ architecture Behavioral of tb_transmitter is
   constant c_CNT_WIDTH         : natural := 4;
   constant c_CLK_100MHZ_PERIOD : time    := 10 ns;
 
-  -- outputs
-  signal sig_serialised_bit    : std_logic;
   -- inputs
   signal sig_clk_100mhz        : std_logic                                     := '0';
   signal sig_data_frame        : std_logic_vector (c_DATA_WIDTH - 1 downto 0)  := "000101110";
@@ -21,7 +19,10 @@ architecture Behavioral of tb_transmitter is
   signal sig_en                : std_logic                                     := '1';
   signal sig_cnt_up            : std_logic                                     := '1';
   signal sig_data_pointer      : std_logic_vector(c_CNT_WIDTH - 1 downto 0)    := (others => '0');
-  signal sig_data_frame_len    : unsigned(3 downto 0)                          := "0101";
+  signal sig_data_frame_len    : unsigned(3 downto 0)                          := "0110";
+  
+    -- outputs
+  signal sig_serialised_bit    : std_logic;
   
   
 begin
@@ -37,7 +38,7 @@ begin
       data_frame         => sig_data_frame,
       data_pointer       => sig_data_pointer,
       data_frame_len     => sig_data_frame_len,
-      rst                => '0',
+      rst                => sig_rst,
       en                 => sig_en,
       stop_one_bit       => '0',
       parity_bit         => '1',
@@ -50,7 +51,7 @@ begin
   p_clk_gen : process is
   begin
 
-    while now < 800 ns loop            
+    while now < 1500 ns loop            
 
       sig_clk_100mhz <= '0';
       wait for c_CLK_100MHZ_PERIOD / 2;
@@ -65,12 +66,16 @@ begin
   --------------------------------------------------------
   -- Reset generation process
   --------------------------------------------------------
-  p_reset_gen : process is
-  begin
-
-    sig_rst <= '0';
-
-    wait;
+    p_reset_gen : process is
+    begin
+    loop
+        sig_rst <= '0';
+        wait for 200ns;
+        sig_rst <= '1';
+        wait for 40ns;
+        sig_rst <= '0';
+        wait for 280ns;
+    end loop;
 
   end process p_reset_gen;
   --------------------------------------------------------
@@ -78,13 +83,12 @@ begin
   --------------------------------------------------------
   p_en_gen : process is
   begin
-
-    -- Enable counting
     sig_en <= '1';
-    wait;
-
+    wait for 500ns;
+    sig_en <= '0';
+    wait for 1300ns;
   end process p_en_gen;
-    --------------------------------------------------------
+  --------------------------------------------------------
   -- direction generation process
   --------------------------------------------------------
   p_cnt_up : process is

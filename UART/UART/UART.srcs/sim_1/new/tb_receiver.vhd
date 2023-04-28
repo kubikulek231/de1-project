@@ -20,7 +20,7 @@ architecture Behavioral of tb_receiver is
   signal sig_data_bit          : std_logic                                     := '1';
   signal sig_received_bit      : std_logic                                     := '0';
   signal sig_data_pointer      : std_logic_vector(c_CNT_WIDTH - 1 downto 0)    := (others => '0');
-  signal sig_data_frame_len    : unsigned(3 downto 0)                          := "0101";
+  signal sig_data_frame_len    : unsigned(3 downto 0)                          := "0110";
   signal sig_is_ok             : boolean                                       := false;
   signal sig_is_finished       : boolean                                       := false;
   
@@ -66,15 +66,19 @@ begin
 
   end process p_clk_gen;
   
-    --------------------------------------------------------
+  --------------------------------------------------------
   -- Reset generation process
   --------------------------------------------------------
     p_reset_gen : process is
-  begin
-
-    sig_rst <= '0';
-
-    wait;
+    begin
+    loop
+        sig_rst <= '0';
+        wait for 200ns;
+        sig_rst <= '1';
+        wait for 40ns;
+        sig_rst <= '0';
+        wait for 280ns;
+    end loop;
 
   end process p_reset_gen;
   --------------------------------------------------------
@@ -82,11 +86,10 @@ begin
   --------------------------------------------------------
   p_en_gen : process is
   begin
-
-    -- Enable counting
     sig_en <= '1';
-    wait;
-
+    wait for 500ns;
+    sig_en <= '0';
+    wait for 1300ns;
   end process p_en_gen;
     --------------------------------------------------------
   -- direction generation process
@@ -96,7 +99,6 @@ begin
 
     -- Change counter direction
     sig_cnt_up <= '1';
-    wait for 500 ns;
     wait;
 
   end process p_cnt_up;
@@ -109,17 +111,25 @@ begin
     --"1111111110001101";
     report "Stimulus process started";
     loop
+        -- pull high, sync
+        sig_data_bit  <= '1';
+        wait for 50ns;
+        -- send valid UART frame
         -- pull low - start bit
         sig_data_bit  <= '0';
         wait for 10ns;
-        -- transmitted data frame (5 bits)
+        -- transmitted data frame (7 bits)
         sig_data_bit  <= '1';
+        wait for 10ns;
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        sig_data_bit  <= '0';
         wait for 10ns;
         sig_data_bit  <= '1';
         wait for 10ns;
         sig_data_bit  <= '1';
         wait for 10ns;
-        sig_data_bit  <= '1';
+        sig_data_bit  <= '0';
         wait for 10ns;
         sig_data_bit  <= '1';
         wait for 10ns;
@@ -131,6 +141,40 @@ begin
         wait for 10ns;
         sig_data_bit  <= '1';
         wait for 10ns;
+        -- pull high, sync
+        sig_data_bit  <= '1';
+        wait for 50ns;
+        -- send invalid UART frame
+        -- pull low - start bit
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        -- transmitted data frame (7 bits)
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        sig_data_bit  <= '0';
+        wait for 10ns;
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        -- parity bit (odd)
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        -- stop bit (two)
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        sig_data_bit  <= '1';
+        wait for 10ns;
+        -- pull high, sync
+        sig_data_bit  <= '1';
+        wait for 50ns;
+        
     end loop;
     report "Stimulus process finished";
     wait;

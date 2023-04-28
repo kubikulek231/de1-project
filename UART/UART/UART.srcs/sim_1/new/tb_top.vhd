@@ -69,11 +69,25 @@ begin
     wait for 500 ns;
     -- switch to receiving
     sw <= "0001001110001101";
-    wait for 500 ns;
-    -- switch back to transmitting
-    sw <= "0000001110001100";
+    wait for 1000 ns;
 
   end process p_sw_gen;
+  
+  --------------------------------------------------------
+  -- Reset generation process
+  --------------------------------------------------------
+  p_reset_gen : process is
+  begin
+    loop
+        BTNC <= '0';
+        wait for 200ns;
+        BTNC <= '1';
+        wait for 40ns;
+        BTNC <= '0';
+        wait for 280ns;
+    end loop;
+
+  end process p_reset_gen;
   
   --------------------------------------------------------
   -- input data generation process
@@ -85,7 +99,8 @@ begin
     loop
         -- idle to sync
         J_IN  <= '1';
-        wait for 40ns;
+        wait for 100ns;
+        -- send valid UART frame
         -- pull low - start bit
         J_IN  <= '0';
         wait for 10ns;
@@ -93,6 +108,32 @@ begin
         J_IN  <= '1';
         wait for 10ns;
         J_IN  <= '0';
+        wait for 10ns;
+        J_IN  <= '1';
+        wait for 10ns;
+        J_IN  <= '0';
+        wait for 10ns;
+        J_IN  <= '1';
+        wait for 10ns;
+        -- parity bit (odd)
+        J_IN  <= '0';
+        wait for 10ns;
+        -- stop bit (two)
+        J_IN  <= '1';
+        wait for 10ns;
+        J_IN  <= '1';
+        wait for 10ns;
+        -- idle to sync
+        J_IN  <= '1';
+        wait for 150ns;
+        -- send invalid UART frame
+        -- pull low - start bit
+        J_IN  <= '0';
+        wait for 10ns;
+        -- transmitted data frame (5 bits)
+        J_IN  <= '1';
+        wait for 10ns;
+        J_IN  <= '1';
         wait for 10ns;
         J_IN  <= '1';
         wait for 10ns;
