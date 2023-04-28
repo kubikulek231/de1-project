@@ -39,28 +39,34 @@ The demo application is implemented on a Nexys A7 development board with the fol
 
 ## Software description
 
-**Reciever**  
-The receiver module converts serial data to a vector using a clock signal and handles different UART frame settings. It uses an up-down counter to sync with incoming data and verifies data integrity by checking if the number of '1's in the dataframe is odd/even.  You can check the [reciever code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/receiver.vhd)
-
 **Transmiter**  
 The transmitter module serializes data by outputting a start bit and bit-by-bit with the clock signal. It handles various UART frame settings and adds parity bits based on user settings, and outputs one or two stop bits. It also uses an up-down counter to sync with incoming data.  You can check the [transmitter code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/transmitter.vhd)
+
+**Reciever**  
+The receiver module converts serial data to a vector using a clock signal and handles different UART frame settings. It uses an up-down counter to sync with incoming data and verifies data integrity by checking if the number of '1's in the dataframe is odd/even.  You can check the [reciever code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/receiver.vhd)
 
 **TOP**  
 The top entity serves as the user interface for the UART system and connects with the receiver and transmitter modules. It allows the user to set up the UART frame and parity settings via switches and buttons, sends out data from transmitter mode and displayes the received incoming data on LED indicators.  You can check the [top-structure code here.](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/top.vhd)
 
 ### Component(s) simulation
 
-Simulated weveforms of *receiver* entity using [tb_receiver](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)  testbench file  
-
-![Receiver](images/simulation/receiver.png "Receiver")
-
 Simulated weveforms of *transmitter* entity using [tb_transmitter](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd) testbench file
 
 ![Transmitter](images/simulation/transmitter.png "Transmitter")
 
+>In this simulation you can see the simulated behavior of transmitter entity, there is the *transmitted dataframe* vector signal, which resembles the data to transmit. The *dataframe pointer* is there to store the information about which data bit from the dataframe will be transmitted next, *dataframe length* then tells how many data bits in dataframe are. The *serial out* signal then shows the transmitted UART data. The simulation also shows how the entity acts upon *reset* and *enable* signals.
+
+Simulated weveforms of *receiver* entity using [tb_receiver](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_receiver.vhd)  testbench file  
+
+![Receiver](images/simulation/receiver.png "Receiver")
+
+>In the simulation of receiver entity there is the *serial in* signal where the serial data to be received by the receiver entity is, *received dataframe* vector signal resembles the received dataframe. The *dataframe pointer* is there to store the information about which data bit from the dataframe will be received next, *dataframe length* then tells how many data bits in dataframe are. The boolean *data valid* signal indicates whether the received data's parity is valid, *frame received* indicates whether the UART was received. The simulation also shows how the entity acts upon *reset* and *enable* signals.
+
 Simulated weveforms of *top* entity using [tb_top](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_top.vhd) testbench file
 
 ![Top](images/simulation/top.png "Top")
+
+>As the top entity connects the user input elements with the receiver and transmitter entities, the simulation shows the _SW_ input switches vector, which has been initially set to transmitter mode. Received dataframe is displayed with the first 9 bits of the *LED* signal. Segmented display output is represented by the *SEG* signal and the complementary *AN* signal shows which digit is currently being shown (anode is pulled low). The reset signal is resembled by the *BTNC* button signal and the UART serial input and output is shown by the *J_IN* and *J_OUT* signals respectively. 
 
 ## Instructions
 
