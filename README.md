@@ -33,7 +33,7 @@ The demo application is implemented on a Nexys A7 development board with the fol
 - BTNC, BTNL, BTNR, BTNU, BTND buttons: These buttons are used to set the baudrate and BTNC to reset the aplication.
 - Pmod connector: Only two pins (RX and TX) from the PMOD connector are used to enable communication between the board and external devices. The RX pin is used to receive data, while the TX pin is used to transmit data.
 
-![schematic](images/schematic.png "Schematic")
+![schematic](images/schematics/schematic.png "Schematic")
 
 > Schematic of the used hardware parts of the Nexys A7 board from [Reference manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
 
@@ -81,19 +81,19 @@ In the third video, I demonstrate the board in receiving mode. I connected the b
 - Link: https://www.youtube.com/watch?v=l6r-ZX2BniM
 
 #### Manual
-![Switches](images/switches.png "Switches")
+![Switches](images/manual/switches.png "Switches")
 > The switches are used to set the data frame and its parameters in the UART communication.
 
-![Buttons](images/buttons.png "Buttons")
+![Buttons](images/manual/buttons.png "Buttons")
 > The BTNL, BTNR, BTNU, and BTND buttons are used to set the baudrate and BTNC to reset the application by pressing it.
 
-![Display](images/display.png "Display")
+![Display](images/manual/display.png "Display")
 > The display shows the current status of the UART aplication.
 
-![Leds](images/leds.png "Leds")
+![Leds](images/manual/leds.png "Leds")
 > The LEDs indicate UART communication state. The first 9 show received data when parity is none or data is safely received, with each LED corresponding to a bit, on when 1 and off when 0.
 
-![Serial](images/serial.png "Serial")
+![Serial](images/manual/serial.png "Serial")
 > The RX pin is used to receive data, while the TX pin is used to transmit data.
 
 ## References
