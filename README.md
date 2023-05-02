@@ -47,7 +47,7 @@ The demo application is implemented on a Nexys A7 development board with the fol
 - BTNC, BTNL, BTNR, BTNU, BTND buttons: These buttons are used to set the baudrate and BTNC to reset the aplication.
 - Pmod connector: Only two pins (RX and TX) from the PMOD connector are used to enable communication between the board and external devices. The RX pin is used to receive data, while the TX pin is used to transmit data.
 
-![schematic](images/schematics/schematic.png "Schematic")
+![HW Schematic](images/schematics/hardware.png "HW Schematic")
 
 > Schematic of the used hardware parts of the Nexys A7 board from [Reference manual](https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual)
 
@@ -69,6 +69,8 @@ The VHDL code consists of several entities:
 - **Other** modules
   - Clock enable, Counter and Hex to Seg converter entities with sligh moddifications. Original modules can be found in DE1 course [repository](https://github.com/tomas-fryza/digital-electronics-1).
   - View the code for [clock_enable.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd), [cnt_up_down.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd), [hex_7seg.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/hex_7seg.vhd)
+
+![Code schematic](images/schematics/code.png "Code schematic")
 
 ### Components simulation
 
