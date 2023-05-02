@@ -10,6 +10,7 @@ This project is part of the Digital Electronics course (BPC-DE1 22/23L) at Brno 
     + [Receiver](#receiver)
   * [Hardware description of demo application](#hardware-description-of-demo-application)
   * [Software description](#software-description)
+  + [Top module schematic](#top-module-schematic)
     + [Components simulation](#components-simulation)
   * [Instructions](#instructions)
       - [Video showcase](#video-showcase)
@@ -70,6 +71,8 @@ The VHDL code consists of several entities:
   - Clock enable, Counter and Hex to Seg converter entities with sligh moddifications. Original modules can be found in DE1 course [repository](https://github.com/tomas-fryza/digital-electronics-1).
   - View the code for [clock_enable.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/clock_enable.vhd), [cnt_up_down.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/cnt_up_down.vhd), [hex_7seg.vhd](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sources_1/new/hex_7seg.vhd)
 
+
+### Top module schematic
 ![Code schematic](images/schematics/code.png "Code schematic")
 
 >The Top module block schematic showing the interconnected Transmitter, Receiver, and other entities using internal signals. Note that for the sake of clarity, there had been made some simplifications.
