@@ -10,7 +10,7 @@ This project is part of the Digital Electronics course (BPC-DE1 22/23L) at Brno 
     + [Receiver](#receiver)
   * [Hardware description of demo application](#hardware-description-of-demo-application)
   * [Software description](#software-description)
-  + [Top module schematic](#top-module-schematic)
+    + [Top module schematic](#top-module-schematic)
     + [Components simulation](#components-simulation)
   * [Instructions](#instructions)
       - [Video showcase](#video-showcase)
