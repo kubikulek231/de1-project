@@ -72,6 +72,8 @@ The VHDL code consists of several entities:
 
 ![Code schematic](images/schematics/code.png "Code schematic")
 
+>The Top module block schematic showing the interconnected Transmitter, Receiver, and other entities using internal signals. Note that for the sake of clarity, there had been made some simplifications.
+
 ### Components simulation
 
 Simulated weveforms of *transmitter* entity using [tb_transmitter](https://github.com/kubikulek231/de1-project/blob/master/UART/UART/UART.srcs/sim_1/new/tb_transmitter.vhd) testbench file
